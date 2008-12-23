@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+  <head> 
+      <title>OpenLayers Image Layer</title>
+          
+    <link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css" /> 
+    <link rel="stylesheet" href="http://openlayers.org/dev/style.css" type="text/css" /> 
+
+    <script src="http://openlayers.org/dev/OpenLayers.js"></script> 
+    <script type="text/javascript"> 
+        var map;
+        function init(){
+                    
+            var mapOptions = {
+                projection: new OpenLayers.Projection("EPSG:4326") /*,
+                units: "m",
+                maxResolution: 156543.0339,
+                maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34,
+                                                 20037508.34, 20037508.34)     */       
+            };
+            map = new OpenLayers.Map('map', mapOptions);
+          
+            var proj = new OpenLayers.Projection("EPSG:4326");
+            
+            // L, B, R, T
+            var graphicBounds = new OpenLayers.Bounds(-10.4699, 49.9582, 1.8457, 58.67408186);
+                graphicBounds.transform( proj, map.getProjectionObject() );
+            
+            var imageLayerOpts = {
+              //projection: new OpenLayers.Projection("EPSG:4326"),
+              isBaseLayer: true,
+              sphericalMercator:true
+            };
+            
+            var graphic = new OpenLayers.Layer.Image(
+                                'Static image',
+                                'georeference.gif',
+                                graphicBounds,
+                                new OpenLayers.Size(280,339),
+                                imageLayerOpts);
+ 
+            /*
+             Load marker data
+            */ 
+            var styles = new OpenLayers.Style({
+              fillColor: "#000066",
+              pointRadius: 3
+            });
+            
+            var markerLayer = new OpenLayers.Layer.GML("GeoRSS feed",
+                                                   "all_people.rss", {
+                format: OpenLayers.Format.GeoRSS,
+                formatOptions: {
+                    // adds the thumbnail attribute to the feature
+                    createFeatureFromItem: function(item) {
+                        var feature = OpenLayers.Format.GeoRSS.prototype
+                                .createFeatureFromItem.apply(this, arguments);
+                        //feature.geometry.transform(proj, map.getProjectionObject());
+                        return feature;
+                    }
+                },
+                styleMap: new OpenLayers.StyleMap(styles),
+                projection: new OpenLayers.Projection("EPSG:4326"),
+                isVisible: false
+            });
+            
+ 
+            map.addLayers([ markerLayer, graphic ]);
+            map.addControl(new OpenLayers.Control.LayerSwitcher());
+
+            var centre = new OpenLayers.LonLat( -4.315171528654969, 54.622317002024275 );
+                centre.transform( proj, map.getProjectionObject() );
+                
+            map.setCenter( centre );
+            //map.zoomToScale(0);
+            }
+    </script> 
+  </head> 
+  <body onload="init()"> 
+    <h1 id="title">Image Layer</h1> 
+    <div id="map" class="smallmap" style="width:600px; height:400px;"></div> 
+  </body> 
+</html> 
