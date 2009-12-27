@@ -1,8 +1,12 @@
 <div id="post-list">
   <h2>Recent posts</h2>
+  {% if site.posts > 0 }
   <ul>
     {% for post in site.posts %}
       <li><span class="date">{{ post.date | date_to_string }}</span> <a class="url" href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
+  {% else %}
+  <p>No posts</p>
+  {% endif %}
 </div>

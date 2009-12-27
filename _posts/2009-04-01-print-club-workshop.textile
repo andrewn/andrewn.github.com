@@ -3,6 +3,7 @@
 layout: default
 title: Print Club workshop
 morelinks: - [ "Print Club", "http://www.printclublondon.com/beginners.php" ]
+published: false
 
 ---
 
