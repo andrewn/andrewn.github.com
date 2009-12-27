@@ -1,0 +1,367 @@
+/*
+  Debug
+*/
+body.grid { 
+  background: transparent url(/assets/img/grid.png) repeat; 
+}
+
+/*
+  Defaults:
+  
+  Fonts from: Titillium
+  Grid: 30px, 10px gutter
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  font-size: 75%; /* Set font size: 12px ?? */
+  font-family: titillium-26-3, Helvetica, Arial, sans-serif;
+}
+
+body a {
+  color: #000;
+}
+
+html>body {
+  font-size: 12px;
+}
+
+/*
+  Line height, margin calculations:
+  Default font: 12px (1em)
+  Line height: 24px (2em)
+  
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family:  titillium-26-1, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 4em;
+
+/*
+  line-height: 1.667em;
+  margin-top: 1.667em;
+  margin-bottom: 1.667em;
+*/
+}
+
+/*
+  font-size / grid-height
+  20px / 18px = 1.111em
+  1.667em / 1.5em = 
+*/
+h2 {
+  font-size: 18px;
+  
+  line-height: 1.111em;
+  margin-top: 1.111em;
+  
+  /*
+  margin-bottom: 1.111em;
+  */
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 12px;
+}
+
+h5, h6 {
+  font-size: 12px;
+}
+
+p {
+  line-height: 1.667em;
+  /*margin-top: 1.667em;*/
+  /* margin-bottom: 1.667em; */
+}
+
+ol li {
+  line-height: 1.667em;
+}
+
+/*
+  Accessibility
+*/
+#access {
+  display: none;
+}
+
+/*
+  Masthead
+*/
+#masthead, 
+#masthead #logo, 
+#masthead #logo a {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#masthead {
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-bottom: 0px;
+  position: relative;
+}
+
+#masthead #logo,
+#masthead #logo a {
+  display: block;
+  width: 120px;
+  height: 65px;
+}
+
+#masthead #logo {
+  overflow: hidden;
+  /* background: transparent url(/assets/img/an-logo.png) no-repeat; */
+}
+
+#masthead #logo img {
+	height: 59px;
+	margin-left:  3px;
+	
+}
+
+#masthead #logo a {
+	display: block;
+}
+
+#masthead #logo a span {
+  display: block;
+  margin-left: -90000px;
+}
+
+#masthead ul#nav {
+  display: block;
+    
+  margin: 0;
+  padding: 0;
+  
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+
+#masthead ul#nav li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+  font-size: 2em;
+  line-height: 3.334em;
+  margin-top: 3.334em;
+  margin-bottom: 3.334em;
+  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+#masthead #nav .about {
+  width: 160px;
+  margin-left: 160px;
+}
+
+#masthead #nav .projects {
+  width: 160px;
+  margin-left: 240px;
+}
+
+/*
+  Content
+*/
+#content {
+  position: relative;
+  margin-left: 40px;
+  width: 600px;
+}
+
+#greetings h2 {
+  width: 270px;
+  font-size: 3em;
+  margin: 0;
+}
+
+#intro {
+  width: 340px;
+  font-size: 2em;
+  margin:0;
+}
+
+#intro p {
+  line-height: 1em;
+  margin-bottom: 0.5em;
+}
+
+#intro p.job, #intro p.job a { color: #990; }
+#intro p.freelance, #intro p.freelance a { color: #903; }
+#intro p.email, #intro p.email a { color: #09c; }
+
+/*
+  Posts
+*/
+#post-list {
+  position: absolute;
+  top: 15px;
+  left: 355px;
+  padding-left: 5px;
+  border-left: 1px solid #ccc;
+  
+  background-color: #eee;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+#post-list h2 {
+  margin-top: 0;
+}
+
+#post-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+#post-list li {
+  font-size: 1.5em;
+  position: relative;
+  width: 480px;
+}
+
+#post-list li .date {
+  font-family: titillium-26-3;
+  /* border: 1px solid blue; */
+}
+
+#post-list li .url {
+  /* border: 1px solid green; */
+  position: absolute;
+  left: 120px;
+}
+
+/*
+  CV page
+*/
+#cv h3 {
+  font-size: 16px;
+}
+
+#cv h4 {
+  font-size: 14px;
+}
+
+#cv li {
+ margin-bottom: 1.11em; 
+}
+
+#cv li .date {
+  color: #555;
+}
+
+#cv li .title {
+  
+}
+
+#cv li .org {
+  
+}
+
+/*
+  Activity stream
+*/
+#activity {
+  margin-top: 1.667em;
+}
+
+#activity li {
+	position: relative;
+	margin-bottom: 1.667em;
+}
+
+#activity li.category h2 {
+  font-size: 0.8em;
+  
+  display: block;
+  width: 70px;
+  height: 1.667em;
+  margin: 0;
+  line-height: 1.667em;
+  text-align: center;
+  text-transform: uppercase;
+  
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+#activity li.category h2 {
+	background-color: rgba(156, 16, 0, 1);
+	color: #FFF;
+	
+	background: -webkit-gradient(radial, right bottom, 0, left top, 200, from(#F00), to(#FFF));
+}
+
+#activity li.category.blog h2 {
+	background-color: #756 ;
+	color: #FFF;
+	
+	background: -webkit-gradient(radial, right bottom, 0, left top, 200, from(#756), to(#FFF));
+}
+
+#activity li.category.bookmark h2 {
+	background-color: #48a;
+	color: #FFF;
+	
+	background: -webkit-gradient(radial, right bottom, 0, left top, 200, from(#48A), to(#FFF));
+}
+
+#activity li.category.listening h2 {
+	background-color: #981;
+	color: #FFF;
+	
+	background: -webkit-gradient(radial, right bottom, 0, left top, 200, from(#981), to(#FFF));
+}
+
+#activity li.category p {
+	position: absolute;
+  top: 0;
+  left: 80px; /* category width + gutter */
+}
+
+#activity li.category.listening p img {
+}
+
+
+/*
+#outputs {
+  position: absolute;
+  top: 0;
+  left: 240px;
+}
+
+#outputs li {
+  position: relative;
+}
+
+#outputs p.date {
+  margin: 0;
+  padding: 0;
+  
+  width: 100px;
+}
+
+#outputs p.title {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  
+  margin: 0;
+  padding: 0;
+}
+*/
