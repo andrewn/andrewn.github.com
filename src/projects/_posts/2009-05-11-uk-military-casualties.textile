@@ -1,0 +1,11 @@
+---
+
+layout: default
+title: UK Military Casualties statistics
+categories: [ flash ]
+permalink_style: none
+published: false
+
+---
+
+A project.
