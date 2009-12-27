@@ -54,10 +54,12 @@ h1 {
   1.667em / 1.5em = 
 */
 h2 {
-  font-size: 18px;
+  font-size: 2em;
+  /* font-size: 18px; */
   
   line-height: 1.111em;
-  margin-top: 1.111em;
+  
+  /* margin-top: 1.111em; */
   
   /*
   margin-bottom: 1.111em;
@@ -251,6 +253,7 @@ ol li {
 */
 #cv h3 {
   font-size: 16px;
+  margin-top: 1.11em; 
 }
 
 #cv h4 {
