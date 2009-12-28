@@ -34,6 +34,7 @@ class PinboardProcessor
   def replace_in_template_string( str="", hash={} ) 
     
     if hash[:title].nil? or hash[:title].empty?
+      return ""
       hash[:title] = @@no_title_text
     end
     
