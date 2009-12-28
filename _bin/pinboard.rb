@@ -47,4 +47,4 @@ class PinboardProcessor
   end
 end
 
-puts "<ul>" + PinboardProcessor.new.html + "</ul>"
+puts "<ol>" + PinboardProcessor.new.html + "</ol>"
