@@ -4,26 +4,31 @@ require 'open-uri'
 
 class PinboardProcessor
 
+  attr_reader :html
+
   @@no_title_text = "(No title)"
+  @html
   
   def initialize    
     limit = 5
-    html_template = '<a href="{link}">{title}</a>'
+    html_template = '<li><a href="{link}">{title}</a></li>'
     rss_url = "http://feeds.pinboard.in/rss/u:andrewn"
     proxy = nil
     
     doc = open(rss_url, :proxy => proxy) { |f| Hpricot::XML(f) }
     children = doc.search("//item").slice(0 , limit)
     
-    html = create_html_from_rss_items( children, html_template )
+    @html = create_html_from_rss_items( children, html_template )
   end
 
   def create_html_from_rss_items( items, template )
+    output = ""
     items.each do | item |
       title = item.at( "title" ).inner_html
       url   = item.at( "link" ).inner_html  
-      puts replace_in_template_string( template, { :title => title, :link => url } )
+      output << replace_in_template_string( template, { :title => title, :link => url } )
     end
+    return output
   end
   
   def replace_in_template_string( str="", hash={} ) 
@@ -42,4 +47,4 @@ class PinboardProcessor
   end
 end
 
-PinboardProcessor.new
+puts "<ul>" + PinboardProcessor.new.html + "</ul>"
