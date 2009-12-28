@@ -1,7 +1,7 @@
 God.watch do | w |
   w.name      = "website-update"
   w.interval  = 30.seconds
-  w.start     = "ruby /home/andrew/apps/website.update/update.rb"
+  w.start     = "ruby /home/andrew/apps/website.update/service.rb"
   
   w.behavior(:clean_pid_file) 
   
