@@ -54,7 +54,11 @@
     {% include more_links.html %}
     
     {% if page.id == 'index' %}
+    <div id="sidebar">
     {%   include post_list.html %}
+    {%   include bookmarks.html %}
+    {%   include project_365.html %}
+    </div>
     {% endif %}
   </div> <!-- #content -->
 

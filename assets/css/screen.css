@@ -208,9 +208,9 @@ ol li {
 #intro p.email, #intro p.email a { color: #09c; }
 
 /*
-  Posts
+  Generic sidebar styling
 */
-#post-list {
+#sidebar {
   position: absolute;
   top: 15px;
   left: 355px;
@@ -222,6 +222,9 @@ ol li {
   padding-top: 10px;
 }
 
+/*
+  Posts
+*/
 #post-list h2 {
   margin-top: 0;
 }
