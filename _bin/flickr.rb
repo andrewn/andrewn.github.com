@@ -12,7 +12,7 @@ class Processor
   def initialize    
     limit = 1
     html_template = '<li><a href="{link}"><img src="{url}" /></a></li>'
-    rss_url = "http://api.flickr.com/services/feeds/photos_public.gne?id=97682155@N00&lang=en-us&format=rss_200"
+    rss_url = "http://api.flickr.com/services/feeds/photoset.gne?set=72157622997668729&nsid=97682155@N00&lang=en-us"
     proxy = nil
     
     doc = open(rss_url, :proxy => proxy) { |f| Hpricot::XML(f) }
