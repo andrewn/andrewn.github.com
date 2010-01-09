@@ -7,8 +7,10 @@ helpers do
   end
 end
 
-           # all services in this dir             minus this file    
-services = Dir["#{File.dirname(__FILE__)}/*.rb"] - ["#{File.dirname(__FILE__)}/#{__FILE__}"] 
+puts "#{__FILE__}"
+
+           # all services in the _bin dir  
+services = Dir["#{File.dirname(__FILE__)}/../_bin/*.rb"] 
 
 services.collect! do |item|  
   {
