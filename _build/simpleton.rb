@@ -1,12 +1,20 @@
 require 'rubygems'
 require 'sinatra'
 
+# @TODO: Make SSI logic accept single or double quotes
+# @TODO: Generalise unsupported patterns to match all SSI directives
+
 
 # Rack middleware to parse SSIs
 # in the response body
 class SSIParser  
   def initialize(app)  
     @app = app  
+    
+    @ssi_pattern = /<!--#include virtual=['"]([\w\/.-]+)['"]-->/
+    @ssi_replace = Proc.new { |v| /<!--#include virtual=['"]#{v}['"]-->/ }
+    
+    @unsupported_patterns = ["<!--#config errmsg='<!-- error processing directive -->' -->"]
   end  
 
   def call(env) 
@@ -22,10 +30,13 @@ class SSIParser
       content    = load_paths(ssi_paths)
       
       content.each do | c |
-        s.gsub!( "<!--#include virtual=\"#{c[:path]}\"-->", c[:content] )
+        s.gsub!( @ssi_replace.call(c[:path]), c[:content] )
       end
       
-      s.gsub!("<!--#config errmsg='<!-- error processing directive -->' -->", "")
+      # Strip out unsupported SSI commands
+      @unsupported_patterns.each do |p|
+        s.gsub!(p, "")
+      end
       
       body << s 
     end
@@ -33,8 +44,7 @@ class SSIParser
   end
 
   def ssi_in_doc( doc="" ) 
-    ssi_pattern = /<!--#include virtual="([\w\/.-]+)"-->/
-    matches_in_doc = doc.scan ssi_pattern
+    matches_in_doc = doc.scan(@ssi_pattern)
     return matches_in_doc
   end
   
