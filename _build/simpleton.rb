@@ -88,7 +88,7 @@ require 'sinatra/base'
 #       /about  -> /about/index.html [Loads]
 #       /about  -> /about/ [Redirect] [Optional]
 #       /about/ -> /about/index.html [Loads]
-class Simpleton < Sinatra::Default
+class Simpleton < Sinatra::Base
   
   include FileReader
   
@@ -97,18 +97,30 @@ class Simpleton < Sinatra::Default
   configure do 
     disable :redirect_to_trailing_slash
     set     :index_file, "index.html"
+    
+    # Everything is off in Sinatra::Base so 
+    # copied these defaults from Sinatra::Application
+    set :raise_errors, Proc.new { test? }
+    set :show_exceptions, Proc.new { development? }
+    set :dump_errors, true
+    set :logging, Proc.new { ! test? }
+    set :static, true
   end
 
   enable :redirect_to_trailing_slash
   set :base_path, File.dirname(__FILE__) + "/../_site"
   set :public, File.dirname(__FILE__) + "/../_site"
-
+  
+  # Matches the root
+  # Serves /:index_file
   get '/' do
     puts 'index'
     file_path = options.base_path + "/#{options.index_file}"
     file = read_file( file_path )
   end
 
+  # Matches anything ending in a '/'
+  # Serves /.../:index_file
   get /(\/[\w]+\/)\z/ do
     puts 'trailing slash'
     url_path = params[:captures].to_s + "/#{options.index_file}"    
@@ -116,6 +128,14 @@ class Simpleton < Sinatra::Default
     read_file( file_path )
   end
 
+  # Matches anything else
+  # If the URL matches a directory on 
+  # the file system then either:
+  #   - Serves /.../index.html
+  #   - Redirects to /.../
+  # Otherwise, assume a file and 
+  # pass through to load static
+  # file.
   get '*' do
     puts "Splat (no trailing slash)"
     
