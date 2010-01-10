@@ -26,10 +26,19 @@ class SSIParser
   def initialize(app)  
     @app = app  
     
-    @ssi_pattern = /<!--#include virtual=['"]([\w\/.-]+)['"]-->/
-    @ssi_replace = Proc.new { |v| /<!--#include virtual=['"]#{v}['"]-->/ }
-    
-    @unsupported_patterns = ["<!--#config errmsg='<!-- error processing directive -->' -->"]
+    @ssi_pattern   = /(<!--#([\w]*) (.*)-->)/
+    @ssi_supported = {
+      :include => lambda do | body, whole_directive, directive, params |
+        param_pattern = /(virtual)=['"]([\w\/.-]+)['"]/
+        matches = params.match( param_pattern )
+        inc_type = matches[1]
+        rel_path = matches[2]
+        
+        file_content = load_path( rel_path )
+        body.sub!( whole_directive, file_content )
+      end
+    }
+
   end  
 
   def call(env) 
@@ -42,15 +51,19 @@ class SSIParser
   def process( response, body = "" )
     response.each do |s| 
       ssi_paths  = ssi_in_doc(s)
-      content    = load_paths(ssi_paths)
       
-      content.each do | c |
-        s.gsub!( @ssi_replace.call(c[:path]), c[:content] )
-      end
-      
-      # Strip out unsupported SSI commands
-      @unsupported_patterns.each do |p|
-        s.gsub!(p, "")
+      ssi_paths.each do | ssi |
+        whole_directive = ssi[0]
+        directive       = ssi[1]
+        parameters      = ssi[2]
+        
+        puts "#{whole_directive} #{directive}: #{parameters}"
+        
+        if !@ssi_supported[ directive.to_sym ].nil?
+          @ssi_supported[ directive.to_sym ].call( s, whole_directive, directive, parameters )
+        else
+          s.gsub!( whole_directive, "" )
+        end
       end
       
       body << s 
@@ -63,23 +76,19 @@ class SSIParser
     return matches_in_doc
   end
   
-  def load_paths( relative_paths, path_base=File.dirname(__FILE__) + "/../_site" )    
-    all = []
-    relative_paths.each do |p|
-      path = path_base + p.first
-      c = read_file( path )
-      all << {
-        :path => p,
-        :content => c
-      }
-    end
-    all
+  def load_path( relative_path, path_base=File.dirname(__FILE__) + "/../_site" )
+    path = path_base + relative_path
+    c = read_file( path )
   end
+
 end
 
 
+# Add current dir to load path
+$LOAD_PATH << File.dirname( __FILE__ )
 require 'rubygems'
 require 'sinatra/base'
+require 'firebug_logger.rb'
 
 # Sinatra app to do basic static 
 # file serving but with understanding
@@ -93,7 +102,14 @@ class Simpleton < Sinatra::Base
   include FileReader
   
   use SSIParser
+  use FirebugLogger
 
+  def log(msg="", level=:info)
+    puts msg
+    env['firebug.logs'] = [] if env['firebug.logs'].nil?
+    env['firebug.logs'] << [level, msg]
+  end
+    
   configure do 
     disable :redirect_to_trailing_slash
     set     :index_file, "index.html"
@@ -114,7 +130,7 @@ class Simpleton < Sinatra::Base
   # Matches the root
   # Serves /:index_file
   get '/' do
-    puts 'index'
+    log 'index'
     file_path = options.base_path + "/#{options.index_file}"
     file = read_file( file_path )
   end
@@ -122,7 +138,7 @@ class Simpleton < Sinatra::Base
   # Matches anything ending in a '/'
   # Serves /.../:index_file
   get /(\/[\w]+\/)\z/ do
-    puts 'trailing slash'
+    log 'trailing slash'
     url_path = params[:captures].to_s + "/#{options.index_file}"    
     file_path = options.base_path + url_path
     read_file( file_path )
@@ -137,7 +153,7 @@ class Simpleton < Sinatra::Base
   # pass through to load static
   # file.
   get '*' do
-    puts "Splat (no trailing slash)"
+    log "Splat (no trailing slash)"
     
     # The root-relative url path
     url_path = params[:splat].to_s
@@ -145,11 +161,11 @@ class Simpleton < Sinatra::Base
     file_path = options.base_path + url_path
     is_dir = File.directory? file_path
     
-    puts "Passing to #{options.public}" unless is_dir
+    log "Passing to #{options.public}" unless is_dir
     pass unless is_dir
     
     # Redirect /about -> /about/
-    puts "** #{options.redirect_to_trailing_slash}"
+    log "** #{options.redirect_to_trailing_slash}"
     if options.redirect_to_trailing_slash
       redirect url_path + "/"
     else
