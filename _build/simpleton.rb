@@ -1,6 +1,5 @@
 
 # @TODO: Make load path configurable (or fetched from sinatra)
-# @TODO: Generalise unsupported patterns to match all SSI directives
 
 # Mixin the ability to read 
 # a file from a filesystem 
