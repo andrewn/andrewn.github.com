@@ -222,6 +222,32 @@ ol li {
   padding-top: 10px;
 }
 
+#sidebar #latest-image {
+  margin-top: 10px;
+  border-top: 1px solid #BBB;
+  padding-top: 10px;
+  margin-right: 5px;
+}
+
+#sidebar #latest-image h2 {
+  position: absolute;
+  left: 85px;
+  width: 80px;
+}
+
+#sidebar #latest-image p {
+  height: 55px;
+  width: 55px;
+  border: 1px solid #AAA;
+  padding: 10px;
+  text-align: center;
+  line-height: 55px;
+}
+
+#sidebar #latest-image img {
+  border: 1px solid rgba(0,0,0,0.8);
+}
+
 /*
   Posts
 */
