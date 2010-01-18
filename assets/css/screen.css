@@ -17,7 +17,23 @@ body {
   padding: 0;
   
   font-size: 75%; /* Set font size: 12px ?? */
-  font-family: titillium-26-3, Helvetica, Arial, sans-serif;
+  /* font-family: titillium-26-3, Helvetica, Arial, sans-serif; */
+  font-family: "ff-speak-web-pro-1","ff-speak-web-pro-2", sans-serif;
+}
+
+#colophon {
+}
+
+/*
+  Line height, margin calculations:
+  Default font: 12px (1em)
+  Line height: 24px (2em)
+  
+*/
+h1, h2, h3, h4, h5, h6 {
+  /*font-family:  titillium-26-1, Helvetica, Arial, sans-serif;*/
+  font-family: "ff-speak-web-pro-1","ff-speak-web-pro-2", sans-serif;
+  font-weight: bold;
 }
 
 body a {
@@ -28,15 +44,6 @@ html>body {
   font-size: 12px;
 }
 
-/*
-  Line height, margin calculations:
-  Default font: 12px (1em)
-  Line height: 24px (2em)
-  
-*/
-h1, h2, h3, h4, h5, h6 {
-  font-family:  titillium-26-1, Helvetica, Arial, sans-serif;
-}
 
 h1 {
   font-size: 4em;
