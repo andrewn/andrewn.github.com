@@ -222,24 +222,70 @@ ol li {
   position: absolute;
   top: 15px;
   left: 355px;
-  padding-left: 5px;
-  border-left: 1px solid #ccc;
+  border: 1px solid #ccc;
   
   background-color: #eee;
   padding-bottom: 10px;
   padding-top: 10px;
+  
+  border-top: 5px solid #DDD;
+  border-bottom: 5px solid #DDD;
+}
+
+#sidebar #recent-bookmarks h2,
+#sidebar #recent-bookmarks li,
+#sidebar #recent-bookmarks p {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sidebar #recent-bookmarks p {
+  padding-bottom: 5px;
+}
+
+#sidebar #recent-bookmarks li {
+  padding-top     : 5px;
+  padding-bottom  : 5px;
+  border-bottom   : 1px solid #CCC;
+}
+
+#sidebar #recent-bookmarks li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  line-height: 1.4em;
+}
+
+#sidebar #recent-bookmarks li a {
+}
+
+/*  lime: 990 (153,153,0), pink: 903, 09C */
+#sidebar #recent-bookmarks li:hover {
+  background-color: rgba(153,153,0,0.3);
+}
+
+#sidebar #recent-bookmarks li:last-child {
+  border-bottom: none;
+}
+
+#sidebar #recent-bookmarks {
+  border-bottom: 5px solid #DDD;
 }
 
 #sidebar #latest-image {
+/*
   margin-top: 10px;
   border-top: 1px solid #BBB;
+*/
   padding-top: 10px;
   margin-right: 5px;
+  margin-left: 5px;
 }
 
 #sidebar #latest-image h2 {
   position: absolute;
-  left: 85px;
+  left: 90px;
   width: 80px;
 }
 
