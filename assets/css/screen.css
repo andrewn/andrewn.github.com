@@ -232,6 +232,10 @@ ol li {
   border-bottom: 5px solid #DDD;
 }
 
+#sidebar #recent-bookmarks h2 a {
+  text-decoration: none;
+}
+
 #sidebar #recent-bookmarks h2,
 #sidebar #recent-bookmarks li,
 #sidebar #recent-bookmarks p {
