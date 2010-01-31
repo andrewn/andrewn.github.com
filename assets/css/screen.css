@@ -212,6 +212,7 @@ ol li {
 }
 
 #intro p.job, #intro p.job a { color: #990; }
+#intro p.job a:hover { color: rgba(153, 153, 0, 0.7); }
 #intro p.freelance, #intro p.freelance a { color: #903; }
 #intro p.email, #intro p.email a { color: #09c; }
 
