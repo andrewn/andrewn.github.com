@@ -22,11 +22,16 @@ class Processor
   end
 
   def create_html_from_rss_items( items, template )
+    
+    puts "There are #{items.length} photos" 
+    
     output = ""
     items.each do | item |
       title = item.at( "title" ).inner_html
       link  = item.at( "link" ).inner_html  
       url   = item.at( "media:thumbnail" ).attributes["url"]
+      
+      puts "Title: #{title}, link: #{link}, url: #{url}"
       
       output << replace_in_template_string( template, { :title => title, :link => link, :url => url } )
     end
@@ -36,7 +41,7 @@ class Processor
   def replace_in_template_string( str="", hash={} ) 
     
     if hash[:title].nil? or hash[:title].empty?
-      return ""
+      # return ""
       hash[:title] = @@no_title_text
     end
     
