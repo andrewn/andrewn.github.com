@@ -6,6 +6,7 @@ class Processor
 
   attr_reader :html
 
+  @@debug = false
   @@no_title_text = "(No title)"
   @html
   
@@ -23,7 +24,7 @@ class Processor
 
   def create_html_from_rss_items( items, template )
     
-    puts "There are #{items.length} photos" 
+    puts "There are #{items.length} photos" if @@debug
     
     output = ""
     items.each do | item |
@@ -31,7 +32,7 @@ class Processor
       link  = item.at( "link" ).inner_html  
       url   = item.at( "media:thumbnail" ).attributes["url"]
       
-      puts "Title: #{title}, link: #{link}, url: #{url}"
+      puts "Title: #{title}, link: #{link}, url: #{url}" if @@debug
       
       output << replace_in_template_string( template, { :title => title, :link => link, :url => url } )
     end
