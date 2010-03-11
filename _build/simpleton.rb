@@ -124,7 +124,7 @@ class Simpleton < Sinatra::Base
 
   enable :redirect_to_trailing_slash
   set :base_path, File.dirname(__FILE__) + "/../_site"
-  set :public, File.dirname(__FILE__) + "/../_site"
+  set :public, File.dirname(__FILE__) + "/../_site"   
   
   # Matches the root
   # Serves /:index_file
@@ -136,7 +136,7 @@ class Simpleton < Sinatra::Base
 
   # Matches anything ending in a '/'
   # Serves /.../:index_file
-  get /(\/[\w]+\/)\z/ do
+  get /(\/[.\w\/-]+\/)\z/ do
     log 'trailing slash'
     url_path = params[:captures].to_s + "/#{options.index_file}"    
     file_path = options.base_path + url_path
