@@ -239,22 +239,28 @@ ol li {
 
 #sidebar #recent-bookmarks h2,
 #sidebar #recent-bookmarks li,
-#sidebar #recent-bookmarks p {
+#sidebar #recent-bookmarks p,
+#sidebar #post-list h2,
+#sidebar #post-list li,
+#sidebar #post-list p {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-#sidebar #recent-bookmarks p {
+#sidebar #recent-bookmarks p,
+#sidebar #post-list p {
   padding-bottom: 5px;
 }
 
-#sidebar #recent-bookmarks li {
+#sidebar #recent-bookmarks li,
+#sidebar #post-list li {
   padding-top     : 5px;
   padding-bottom  : 5px;
   border-bottom   : 1px solid #CCC;
 }
 
-#sidebar #recent-bookmarks li a {
+#sidebar #recent-bookmarks li a,
+#sidebar #post-list li a {
   display: block;
   width: 100%;
   height: 100%;
@@ -266,16 +272,23 @@ ol li {
 }
 
 /*  lime: 990 (153,153,0), pink: 903, 09C */
-#sidebar #recent-bookmarks li:hover {
+#sidebar #recent-bookmarks li:hover,
+#sidebar #post-list li:hover {
   background-color: rgba(153,153,0,0.3);
 }
 
-#sidebar #recent-bookmarks li:last-child {
+#sidebar #recent-bookmarks li:last-child,
+#sidebar #post-list li:last-child {
   border-bottom: none;
 }
 
-#sidebar #recent-bookmarks {
+#sidebar #recent-bookmarks,
+#sidebar #post-list {
   border-bottom: 5px solid #DDD;
+}
+
+#sidebar #post-list li .date {
+  display: block;
 }
 
 #sidebar #latest-image {
@@ -307,33 +320,43 @@ ol li {
   border: 1px solid rgba(0,0,0,0.8);
 }
 
-/*
-  Posts
-*/
-#post-list h2 {
-  margin-top: 0;
+#sidebar #latest-image ol.use-carousel {
+  width: 1000px;
 }
 
-#post-list ul {
-  margin: 0;
-  padding: 0;
+#sidebar #latest-image ol.use-carousel li {
+  float: left;
 }
 
-#post-list li {
-  font-size: 1.5em;
+#sidebar #latest-image .carousel {
   position: relative;
-  width: 480px;
+  width: 100px;
+  height: 77px;
 }
 
-#post-list li .date {
-  font-family: titillium-26-3;
-  /* border: 1px solid blue; */
+#sidebar #latest-image .carousel .container {
+  position: relative;
+  overflow: hidden;
+  width: 77px;
+  height: 77px;  
 }
 
-#post-list li .url {
-  /* border: 1px solid green; */
+
+#sidebar #latest-image .carousel .container ol {
   position: absolute;
-  left: 120px;
+  top: 0;
+  left: 0;
+}
+
+#sidebar #latest-image .carousel a .carousel_button {
+  display: block;
+  height: 10px;
+  width: 10px;
+  background-color: #222;
+
+  position: absolute;
+  top: 67px;
+  right: 0;
 }
 
 /*

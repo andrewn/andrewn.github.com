@@ -18,10 +18,27 @@
 
   <script type="text/javascript" src="http://use.typekit.com/iaa3xcz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  
+
+
+<!--
   <script type="text/javascript" src="/assets/js/lib/jquery-1.2.6.js"></script>
   <script type="text/javascript" src="/assets/js/site_functions.js"></script>
+-->
 
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.4/dojo/dojo.xd.js"></script>
+  <script src="/assets/js/Carousel.js"></script>
+  <script>
+    dojo.addOnLoad( function () {
+      var photos = dojo.query( "#latest-image ol li" );
+      if ( photos.length > 1 ) {
+        dojo.query( '#latest-image ol' ).addClass( 'use-carousel' );
+        window.c = new an.Carousel( '#latest-image ol', {
+          itemsPerView: 1
+        } );
+      }
+    });
+  </script>
+  
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/reset/reset-min.css"> 
 
 <!--
