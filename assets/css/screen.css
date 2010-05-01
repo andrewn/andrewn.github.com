@@ -14,7 +14,8 @@ body.grid {
 
 h1, h2, h3, h4, h5, h6, body {
   /* font-family: titillium-26-3, Helvetica, Arial, sans-serif; */
-  font-family: "ff-enzo-web-1","ff-enzo-web-2",sans-serif;  
+  font-family: "ff-meta-web-pro-1","ff-meta-web-pro-2",sans-serif;
+  /* font-family: "ff-enzo-web-1","ff-enzo-web-2",sans-serif;*/
 }
 
 body {
@@ -449,6 +450,32 @@ ol li {
 }
 
 #activity li.category.listening p img {
+}
+
+#books #content li {
+    border-bottom: 1px solid #EEE;
+    width: 50%;
+    clear: left;
+    min-height: 91px;
+}
+
+#books #content li img {
+    float: left;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+#books #content li .title,
+#books #content li .author {
+    display: block;
+}
+
+#books #content li .title {
+    margin-top: 10px;
+}
+
+#books #content li .author {
+    color: #333;
 }
 
 
