@@ -453,16 +453,16 @@ ol li {
 }
 
 #books #content li {
-    border-bottom: 1px solid #EEE;
-    width: 50%;
-    clear: left;
-    min-height: 91px;
+    border-bottom   : 1px solid #EEE;
+    width           : 50%;
+    clear           : left;
+    min-height      : 91px;
 }
 
 #books #content li img {
-    float: left;
-    padding: 0;
-    margin: 0 0 0 0;
+    float   : left;
+    padding : 0;
+    margin  : 0;
 }
 
 #books #content li .title,
@@ -475,7 +475,8 @@ ol li {
 }
 
 #books #content li .author {
-    color: #333;
+    color: #4C4C4C;
+    font-weight: bold;
 }
 
 
