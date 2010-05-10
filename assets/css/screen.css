@@ -283,7 +283,7 @@ ol li {
   border-bottom: none;
 }
 
-#sidebar #recent-bookmarks,
+/* #sidebar #recent-bookmarks, */
 #sidebar #post-list {
   border-bottom: 5px solid #DDD;
 }
