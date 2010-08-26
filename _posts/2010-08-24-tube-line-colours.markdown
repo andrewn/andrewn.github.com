@@ -10,6 +10,7 @@ published: true
 <style type='text/css'>
   table {
     margin-top: 15px;
+    margin-left: 5px;
     margin-bottom: 15px;
   }
   
