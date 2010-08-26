@@ -32,7 +32,7 @@ published: true
   }
 </style>
 
-<table>
+<table id="tube-line-col">
   <colgroup class="line"></colgroup>
   <colgroup class="hex"></colgroup>
   <colgroup class="rgb"></colgroup>
@@ -40,6 +40,7 @@ published: true
     <th>Line</th>
     <th>Hex</th>
     <th>RGB</th>
+    <th></th>
   </tr>
   <tr>
     <td>Overground</td>
