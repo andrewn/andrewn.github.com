@@ -1,6 +1,9 @@
 (
   function tubeLineColourExtractor() {
     var table = document.getElementById('tube-line-col');
+    
+    if ( !table ) { return; }
+    
     var rows = table.rows;
     
     rows[0].cells[0].style.paddingLeft = "10px";
