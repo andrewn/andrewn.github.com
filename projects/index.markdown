@@ -1,37 +1,35 @@
 ---
 layout: default
 title: Recent projects
+id: projects
 ---
 
-BBC Weather page improvements
----
+<ul>
+  <li>
+    <h3>BBC Weather refresh</h3>
+    <p class="tech">Javascript, PHP, CSS, HTML</p>
+    <a href="http://www.bbc.co.uk/weather">View project.</a>
+  </li>
+  <li>
+    <h3>Mapping UK's teen murder toll</h3>
+    <p class="tech">Flash bar charts, templates, modest maps-based info graphic.</p>
+    <a href="http://news.bbc.co.uk/1/hi/uk/7780497.stm">View the map.</a>
+  </li>
 
-Javascript, PHP, CSS, HTML
+  <li>
+    <h3>Olympic Heroes Parade map</h3>
+    <p class="tech">Modest maps Flash API, live updating twitter and flickr.</p>
+    <a href="http://news.bbc.co.uk/sport1/hi/olympic_games/7669416.stm">View the map.</a>
+  </li>
 
-[View project.](http://www.bbc.co.uk/weather)
+  <li>
+    <h3>Beijing Olympics map</h3>
+    <p class="tech">Virtual Earth API, venue guide, Twitter feeds, BBC blogs.</p>
+    <a href="http://news.bbc.co.uk/sport1/hi/olympics/7493757.stm">View the map.</a>
+  </li>
 
-Mapping UK's teen murder toll
----
-
-Flash bar charts, templates, modest maps-based info graphic. 
-
-[View project.](http://news.bbc.co.uk/1/hi/uk/7780497.stm)
-
-Olympic Heroes Parade map
----
-
-Modest maps Flash API, live updating twitter and flickr. 
-
-[View the map.](http://news.bbc.co.uk/sport1/hi/olympic_games/7669416.stm)
-
-Beijing Olympics map
----
-
-Virtual Earth API, venue guide, Twitter feeds, BBC blogs. 
-
-[View the map.](http://news.bbc.co.uk/sport1/hi/olympics/7493757.stm)
-
-Olympic Programme Guide
----
-
-Javascript-based programme guide for each BBC channel and red button service during the Beijing Olympics. No longer online.
+  <li>
+    <h3>Olympic Programme Guide</h3>
+    <p>Javascript-based programme guide for each BBC channel and red button service during the Beijing Olympics. No longer online.</p>
+  </li>
+</ul>

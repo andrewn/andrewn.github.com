@@ -481,6 +481,26 @@ ol li {
     font-weight: bold;
 }
 
+#projects .tech {
+  color: #555;
+}
+
+#projects ul {
+  clear: both;
+}
+
+#projects ul li {
+  margin-top: 10px;
+}
+
+/*
+#projects ul li {
+  display: block;
+  width: 45%;
+  float: left;
+  margin: 10px 10px 10px 0;
+}
+*/
 
 /*
 #outputs {
