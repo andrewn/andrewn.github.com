@@ -1,12 +1,14 @@
 
-Dir.glob(File.dirname(__FILE__) + "/vendor/*").each do |path|
- gem_name = File.basename(path.gsub(/-[\d\.]+$/, ''))
- $LOAD_PATH.unshift path + "/lib/rack"
-end
+require "rubygems"
+Gem.clear_paths
+gem_paths = [
+  File.expand_path("#{File.dirname(__FILE__)}/../vendor/gems"),
+  Gem.default_dir,
+]
+gem_paths << APPLE_GEM_HOME if defined?(APPLE_GEM_HOME)
+Gem.send :set_paths, gem_paths.join(":")
 
-p $LOAD_PATH
-
-require 'esi.rb'
+require 'rack/esi'
 
 #require 'services'
 #require 'frontend'
