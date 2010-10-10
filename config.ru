@@ -1,7 +1,7 @@
 #$LOAD_PATH << File.expand_path(File.dirname(File.dirname(__FILE__)))
-Dir["vendor/*/lib"].each do
+Dir["vendor/*/lib"].each do |path|
   p path
-  |path| $:.unshift path 
+  $:.unshift path 
 end
 
 p $:
