@@ -6,7 +6,7 @@ end
 
 p $LOAD_PATH
 
-require 'rack/esi'
+require 'esi'
 
 #require 'services'
 #require 'frontend'
