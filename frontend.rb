@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'rack/esi'
+require 'vendor/rack-esi/lib/rack/esi'
 
 module AndrewNicolaou
   class Frontend < Sinatra::Base
