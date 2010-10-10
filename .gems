@@ -2,3 +2,4 @@ rack-rewrite
 mustache
 sinatra
 rack-bug
+hpricot
