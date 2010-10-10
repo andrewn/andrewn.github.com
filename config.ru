@@ -1,7 +1,9 @@
-here = File.expand_path(File.dirname(File.dirname(__FILE__)))
-Dir[here + "/vendor/*/lib"].each { |path| $:.unshift path } 
+$LOAD_PATH << File.expand_path(File.dirname(File.dirname(__FILE__)))
+#Dir["vendor/*/lib"].each { |path| $:.unshift path } 
 
 p $:
+
+require 'vendor/rack-esi/lib/rack/esi'
 
 #require 'services'
 #require 'frontend'
