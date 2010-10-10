@@ -1,7 +1,9 @@
 #$LOAD_PATH << File.expand_path(File.dirname(File.dirname(__FILE__)))
 Dir["vendor/*/lib"].each { |path| $:.unshift path } 
 
-require 'services'
-require 'frontend'
+p $:
 
-run AndrewNicolaou::Frontend
+#require 'services'
+#require 'frontend'
+#
+#run AndrewNicolaou::Frontend
