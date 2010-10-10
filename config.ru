@@ -6,6 +6,8 @@ p path
  require gem_name
 end
 
+p $LOAD_PATH
+
 require 'rack/esi'
 
 #require 'services'
