@@ -3,3 +3,5 @@ mustache
 sinatra
 rack-bug
 hpricot
+bluecloth
+redcloth
