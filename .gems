@@ -2,4 +2,4 @@ rack-esi
 rack-rewrite
 mustache
 sinatra
-reck-bug
+rack-bug
