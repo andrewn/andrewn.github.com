@@ -6,7 +6,7 @@ end
 
 p $LOAD_PATH
 
-require 'esi'
+require 'esi.rb'
 
 #require 'services'
 #require 'frontend'
