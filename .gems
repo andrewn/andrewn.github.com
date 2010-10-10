@@ -1,4 +1,3 @@
-rack-esi
 rack-rewrite
 mustache
 sinatra
