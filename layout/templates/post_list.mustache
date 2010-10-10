@@ -1,0 +1,10 @@
+{{#posts}}
+<div id="post-list">
+  <h2>Recent posts</h2>
+  <ul>
+      {{#list}}
+      <li><span class="date">{{ user_friendly_date }}</span> <a class="url" href="{{ url }}">{{ title }}</a></li>
+      {{/list}}
+  </ul>
+</div>
+{{/posts}}

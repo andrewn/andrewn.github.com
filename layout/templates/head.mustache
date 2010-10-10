@@ -1,0 +1,46 @@
+<!-- Begin OpenID delegation -->
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://andrewnicolaou.myopenid.com/" />
+<link rel="openid2.local_id"
+      href="http://andrewnicolaou.myopenid.com" />
+<link rel="openid2.provider"
+      href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location"
+      content="http://www.myopenid.com/xrds?username=andrewnicolaou.myopenid.com" />
+<!-- End OpenID delegation -->
+
+<script type="text/javascript" src="http://use.typekit.com/iaa3xcz.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+<!--
+<script type="text/javascript" src="/assets/js/lib/jquery-1.2.6.js"></script>
+-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.4/dojo/dojo.xd.js"></script>
+<script src="/assets/js/carousel.js"></script>
+<script>
+  dojo.addOnLoad( function () {
+    var photos = dojo.query( "#latest-image ol li" );
+    if ( photos.length > 1 ) {
+      dojo.query( '#latest-image ol' ).addClass( 'use-carousel' );
+      window.c = new an.Carousel( '#latest-image ol', {
+        itemsPerView: 1
+      } );
+    }
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/reset/reset-min.css"> 
+
+<!--
+<link rel="stylesheet" href="/assets/css/fonts.css" type="text/css" media="screen, projection">
+-->
+
+<link rel="stylesheet" href="/assets/css/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="/assets/css/syntax.css" type="text/css" media="screen, projection">
+<!-- <link rel="stylesheet" href="/a/css/print.css" type="text/css" media="print">   -->  
+<!--[if IE]><link rel="stylesheet" href="/a/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  
+<title>{{ title }}</title>
+<meta name="author" content="Andrew Nicolaou">
