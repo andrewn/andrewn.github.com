@@ -1,9 +1,4 @@
+require 'services'
+require 'frontend'
 
-require 'vendor/rack-esi/lib/rack/esi'
-
-
-
-#require 'services'
-#require 'frontend'
-#
-#run AndrewNicolaou::Frontend
+run AndrewNicolaou::Frontend
