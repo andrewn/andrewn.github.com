@@ -4,4 +4,4 @@ sinatra
 rack-bug
 hpricot
 bluecloth
-redcloth
+RedCloth
