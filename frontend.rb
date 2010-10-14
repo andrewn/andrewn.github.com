@@ -33,9 +33,12 @@ module AndrewNicolaou
     # Development
     require "sinatra/reloader" if development?
     configure :development do | config |
+      puts "in development"
       register Sinatra::Reloader
       config.also_reload "layout/views/*.rb"
-      #config.also_reload "layout/helpers/*.rb"
+      config.also_reload "layout/helpers/*.rb"
+      config.also_reload "services/*.rb"
+      config.also_reload "services.rb"
     end
     
     #require 'rack/bug/panels/mustache_panel'

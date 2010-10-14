@@ -20,13 +20,18 @@ module AndrewNicolaou
       "UP"
     end
     
+    get "#{SERVICE}/book/:isbn" do |isbn|
+      require "services/book" 
+      BookProcessor.new.html(isbn)
+    end
+        
     # Takes the service name e.g. 'bob':
     #   1. require( _bin/bob )
     #   2. BobProcess.new.html
     #
     get "#{SERVICE}/:service" do |service|
       require "services/#{service}" 
-      Kernel.const_get( service.capitalize + 'Processor' ).new.html
+      Kernel.const_get( service.capitalize + 'Processor' ).new.html(params)
     end
     
   end
