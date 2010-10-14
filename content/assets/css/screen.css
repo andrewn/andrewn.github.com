@@ -529,3 +529,15 @@ ol li {
   padding: 0;
 }
 */
+
+ul.books li img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+ul.books li {
+  position: relative;
+  min-height: 58px;
+  padding-left: 45px;
+}

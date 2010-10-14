@@ -76,6 +76,16 @@ module AndrewNicolaou
       mustache :page
     end
     
+    get '/book/:year/:month' do
+      month = params[:month]
+      year  = params[:year]
+      
+      @title    = "Books read #{month} #{year}"
+      @isbn = "9781843537830"
+      #@source   = "content/pages/about.html"
+      mustache :book
+    end
+    
     get '/post' do
       @post_list = true
       @title     = "Posts"
