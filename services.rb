@@ -25,7 +25,7 @@ module AndrewNicolaou
     #   2. BobProcess.new.html
     #
     get "#{SERVICE}/:service" do |service|
-      require "_bin/#{service}" 
+      require "services/#{service}" 
       Kernel.const_get( service.capitalize + 'Processor' ).new.html
     end
     
