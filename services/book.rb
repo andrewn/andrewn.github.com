@@ -6,12 +6,19 @@ class BookProcessor
   end
   
   def fetch_book_data(isbn, key="")
+    
     unless @book_json
       search = query("/type/edition", "isbn_13", isbn)
-      book_key    = search[0]["key"]
-      @book_json = fetch(book_key)
+      if search and search[0] and search[0]["key"]
+        book_key    = search[0]["key"]
+        @book_json = fetch(book_key)
+      else
+        @book_json = {}
+      end
     end
-    @book_json[key.to_s] || ""
+    
+    @book_json.has_key?(key.to_s) ? @book_json[key.to_s] : ""
+  
   end
   
   def fetch_author_data(isbn, key="")
@@ -19,18 +26,22 @@ class BookProcessor
       unless @book_json
         fetch_book_data(isbn)
       end
-      author_key = @book_json["authors"][0]["key"]
-      @author_json = fetch(author_key)
+      if @book_json and @book_json["authors"] and @book_json["authors"][0] and @book_json["authors"][0]["key"]
+        author_key = @book_json["authors"][0]["key"]
+        @author_json = fetch(author_key)
+      else
+        @author_json = {}
+      end
     end
-    @author_json[key.to_s] || ""
+    @author_json.has_key?(key.to_s) ? @author_json[key.to_s] : ""
   end
   
   def method_missing(key, *args)
-    fetch_book_data(args, key)
+    fetch_book_data(args, key) || ""
   end
   
   def author(isbn)
-    fetch_author_data(isbn, "name")
+    fetch_author_data(isbn, "name") || ""
   end
   
   def image(isbn, size="S")
@@ -42,12 +53,13 @@ class BookProcessor
   end
  
   def hash(isbn="")
-    {
+    h = {
       :image  => image(isbn, "S"),
       :author => author(isbn),
       :title  => title(isbn),
       :link   => book_processor_url(isbn)
     }
+    h
   end
   
   def json(isbn)

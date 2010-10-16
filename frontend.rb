@@ -78,10 +78,13 @@ module AndrewNicolaou
     
     get '/book/:year/:month' do
       month = params[:month]
-      year  = params[:year]
+      year  = params[:year].to_i
       
-      @title    = "Books read #{month} #{year}"
-      @isbn = "9781843537830"
+      # Get book data
+      data = YAML::load( File.open( 'content/books/books.yaml' ) )
+      @isbns = data["books"][year][month].map { |b| b['isbn'] }
+      
+      @title    = "Books read &raquo; #{month} &raquo; #{year}"
       #@source   = "content/pages/about.html"
       mustache :book
     end
