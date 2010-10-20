@@ -8,6 +8,7 @@ class BookProcessor
   def fetch_book_data(isbn, key="")
     
     unless @book_json
+      isbn.gsub!(/[- ]/, '')
       search = query("/type/edition", "isbn_13", isbn)
       if search and search[0] and search[0]["key"]
         book_key    = search[0]["key"]

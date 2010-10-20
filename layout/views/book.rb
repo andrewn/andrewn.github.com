@@ -6,10 +6,7 @@ module AndrewNicolaou
     module Views
       class Book < Layout        
         def books
-          @isbns.map do | isbn |
-            b = BookProcessor.new.hash(isbn)
-            b[:title].empty? ? nil : b
-          end.compact!
+          @books
         end
       end
     end

@@ -30,11 +30,15 @@ module AndrewNicolaou
       :templates => 'layout/templates/'
     }
     
+    # Models
+    require 'models/book.rb'
+    
     # Development
     require "sinatra/reloader" if development?
     configure :development do | config |
       puts "in development"
       register Sinatra::Reloader
+      config.also_reload "models/*.rb"
       config.also_reload "layout/views/*.rb"
       config.also_reload "layout/helpers/*.rb"
       config.also_reload "services/*.rb"
@@ -84,7 +88,12 @@ module AndrewNicolaou
       data = YAML::load( File.open( 'content/books/books.yaml' ) )
       @isbns = data["books"][year][month].map { |b| b['isbn'] }
       
-      @title    = "Books read &raquo; #{month} &raquo; #{year}"
+     @books = []
+     @isbns.each do | isbn | 
+       @books.push AndrewNicolaou::Models::Book.find_by_isbn( isbn )
+     end.compact!
+
+      @title    = "Books read &raquo; #{year} &raquo; #{month}"
       #@source   = "content/pages/about.html"
       mustache :book
     end
