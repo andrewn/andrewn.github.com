@@ -5,6 +5,10 @@ module AndrewNicolaou
         def title
           @title || 'Andrew Nicolaou'
         end
+        
+        def page_id
+          @page_id || ""
+        end
       end
     end
   end

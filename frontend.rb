@@ -45,6 +45,14 @@ module AndrewNicolaou
       config.also_reload "services.rb"
     end
     
+    ## This before filter ensures that your pages are only ever served 
+    ## once (per deploy) by Sinatra, and then by Varnish after that
+    unless development?
+      before do
+        response.headers['Cache-Control'] = 'public, max-age=31557600' # 1 year
+      end
+    end
+    
     #require 'rack/bug/panels/mustache_panel'
     #use Rack::Bug::MustachePanel
     
@@ -60,12 +68,6 @@ module AndrewNicolaou
     	 rewrite 	/(\/posts\/(.*))[^\/.]?/, '$1/index.html'
     end
     
-    ## This before filter ensures that your pages are only ever served 
-    ## once (per deploy) by Sinatra, and then by Varnish after that
-    #before do
-    #  response.headers['Cache-Control'] = 'public, max-age=31557600' # 1 year
-    #end
-    
     get '/up' do
       "up"
     end
@@ -77,6 +79,7 @@ module AndrewNicolaou
     get '/about' do 
       @title    = "About"
       @source   = "content/pages/about.html"
+      @page_id  = "cv"
       mustache :page
     end
     
