@@ -7,9 +7,9 @@ module AndrewNicolaou
       class Book < Layout        
         def books
           @books.each do | book | 
-            p book.author
-            book.author = html_encode( book.author )
-            p book.author
+            book.each_text_field do |key|
+              book[key] = html_encode( book[key] )
+            end
           end
         end
         

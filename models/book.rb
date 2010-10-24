@@ -107,7 +107,7 @@ module AndrewNicolaou
     end
     
     class Book
-      attr_accessor :title, :author, :cover
+      include Enumerable
       @available_services = [ OpenLibrary, GoogleBooks ]
       def self.find_by_isbn( isbn = "" )
         
@@ -123,11 +123,35 @@ module AndrewNicolaou
         found_book
       end
       
+      def each
+        [ :title, :author, :cover ].each do | key |
+          yield key
+        end
+      end
+      
+      def each_text_field
+        [ :title, :author ].each do | key |
+          yield key
+        end
+      end
+      
+      def [](key)
+        instance_variable_get('@'+key.to_s)
+      end
+      
+      def []=(key, val)
+        instance_variable_set('@'+key.to_s, val)
+      end
+      
+      def method_missing( name, args )
+         instance_variable_set( '@' + name.to_s, args )
+       end
+      
       def to_h
         {
-          :title => title,
-          :author=> author,
-          :cover => cover
+          :title => @title,
+          :author=> @author,
+          :cover => @cover
         }
       end
     end
