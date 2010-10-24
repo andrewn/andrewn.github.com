@@ -80,7 +80,7 @@ module AndrewNicolaou
       mustache :page
     end
     
-    get '/book/:year/:month' do
+    get '/books/:year/:month' do
       month = params[:month]
       year  = params[:year].to_i
       
