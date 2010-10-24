@@ -80,7 +80,7 @@ module AndrewNicolaou
           entry = doc.search("entry")
         
           title  = entry.search("title").inner_html
-          author = entry.search("dc:creator").inner_html
+          author = entry.search("dc:creator").first.inner_html
           # //link[@rel="http://schemas.google.com/books/2008/thumbnail"]
           cover_entry = entry.search('//link[@rel="http://schemas.google.com/books/2008/thumbnail"]')
         
