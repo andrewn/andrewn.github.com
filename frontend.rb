@@ -88,12 +88,14 @@ module AndrewNicolaou
       data = YAML::load( File.open( 'content/books/books.yaml' ) )
       @isbns = data["books"][year][month].map { |b| b['isbn'] }
       
-     @books = []
-     @isbns.each do | isbn | 
-       @books.push AndrewNicolaou::Models::Book.find_by_isbn( isbn )
-     end.compact!
+      @books = []
+      @isbns.each do | isbn | 
+        @books.push AndrewNicolaou::Models::Book.find_by_isbn( isbn )
+      end.compact!
 
-      @title    = "Books read &raquo; #{year} &raquo; #{month}"
+      DELIM = "&raquo;"
+      @title    = "Books read #{DELIM} #{year} #{DELIM} #{month}"
+
       #@source   = "content/pages/about.html"
       mustache :book
     end
