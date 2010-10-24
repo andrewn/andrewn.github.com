@@ -19,11 +19,6 @@ module AndrewNicolaou
     get "#{SERVICE}/up" do
       "UP"
     end
-    
-    get "#{SERVICE}/book/:isbn" do |isbn|
-      require "services/book" 
-      BookProcessor.new.html(isbn)
-    end
         
     # Takes the service name e.g. 'bob':
     #   1. require( _bin/bob )

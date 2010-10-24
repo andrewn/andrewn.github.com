@@ -20,6 +20,10 @@ class PinboardProcessor
     
     @html = create_html_from_rss_items( children, html_template )
   end
+  
+  def html(params={})
+    @html
+  end
 
   def create_html_from_rss_items( items, template )
     output = ""
