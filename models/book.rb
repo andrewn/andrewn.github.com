@@ -81,6 +81,7 @@ module AndrewNicolaou
         
           title  = entry.search("title").inner_html
           author = entry.search("dc:creator").first.inner_html
+        
           # //link[@rel="http://schemas.google.com/books/2008/thumbnail"]
           cover_entry = entry.search('//link[@rel="http://schemas.google.com/books/2008/thumbnail"]')
         
@@ -121,15 +122,15 @@ module AndrewNicolaou
         end 
         found_book
       end
+      
+      def to_h
+        {
+          :title => title,
+          :author=> author,
+          :cover => cover
+        }
+      end
     end
-    
-    def to_h
-      {
-        :title => title,
-        :author=> author,
-        :cover => cover
-      }
-    end
-    
+ 
   end
 end

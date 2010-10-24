@@ -6,3 +6,5 @@ hpricot
 bluecloth
 RedCloth
 json
+htmlentities
+unicode
