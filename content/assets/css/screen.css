@@ -119,9 +119,9 @@ ol li {
 
 #masthead {
   padding-left: 30px;
-  padding-top: 40px;
+  /* padding-top: 40px; */
   padding-bottom: 0px;
-  position: relative;
+  position: fixed;
 }
 
 #masthead #logo,
@@ -193,7 +193,8 @@ ol li {
 */
 #content {
   position: relative;
-  margin-left: 40px;
+  margin-left: 150px;
+  margin-top: 40px;
   width: 600px;
 }
 
