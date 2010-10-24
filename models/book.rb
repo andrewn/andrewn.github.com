@@ -29,9 +29,9 @@ module AndrewNicolaou
             book_data = fetch(book_key)
             if book_data["title"]
               b = Book.new
-              b.title  = book_data["title"]
-              b.author = author_by_open_library( book_data )["name"]
-              b.cover  = "http://covers.openlibrary.org/b/isbn/#{isbn}-S.jpg"
+              b[:title]  = book_data["title"]
+              b[:author] = author_by_open_library( book_data )["name"]
+              b[:cover]  = "http://covers.openlibrary.org/b/isbn/#{isbn}-S.jpg"
             else
               b = nil
             end
@@ -92,22 +92,22 @@ module AndrewNicolaou
           end
         
           b = Book.new
-          b.title  = title
-          b.author = author
-          b.cover  = cover
+          b[:title]  = title
+          b[:author] = author
+          b[:cover]  = cover
           
           puts "Found GoogleBooks, returning #{b}"
           
           return b
         rescue Exception
-          puts "Exception in GoogleBooks, returning nil"
+          puts "Exception in GoogleBooks, returning nil: " + $!
           nil
         end
       end
     end
     
-    class Book
-      include Enumerable
+    class Book < Hash
+
       @available_services = [ OpenLibrary, GoogleBooks ]
       def self.find_by_isbn( isbn = "" )
         
@@ -123,37 +123,12 @@ module AndrewNicolaou
         found_book
       end
       
-      def each
-        [ :title, :author, :cover ].each do | key |
-          yield key
-        end
-      end
-      
       def each_text_field
         [ :title, :author ].each do | key |
           yield key
         end
       end
       
-      def [](key)
-        instance_variable_get('@'+key.to_s)
-      end
-      
-      def []=(key, val)
-        instance_variable_set('@'+key.to_s, val)
-      end
-      
-      def method_missing( name, args )
-         instance_variable_set( '@' + name.to_s, args )
-       end
-      
-      def to_h
-        {
-          :title => @title,
-          :author=> @author,
-          :cover => @cover
-        }
-      end
     end
  
   end
