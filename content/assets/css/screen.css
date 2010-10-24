@@ -371,7 +371,8 @@ ol li {
 /*
   CV page
 */
-.section {
+.section,
+.section > li {
   list-style-type: none;
 }
 
@@ -384,7 +385,7 @@ ol li {
   font-size: 14px;
 }
 
-#cv li {
+#cv li.section {
  margin-bottom: 1.11em; 
 }
 
