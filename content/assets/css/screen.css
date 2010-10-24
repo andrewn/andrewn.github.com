@@ -95,6 +95,11 @@ p {
   /* margin-bottom: 1.667em; */
 }
 
+ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
 ol li {
   line-height: 1.667em;
 }
@@ -366,6 +371,10 @@ ol li {
 /*
   CV page
 */
+.section {
+  list-style-type: none;
+}
+
 #cv h3 {
   font-size: 16px;
   margin-top: 1.11em; 
