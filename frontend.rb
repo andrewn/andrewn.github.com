@@ -63,9 +63,10 @@ module AndrewNicolaou
     # Add /index.html extension to
     # all URLs in /blog
     gem 'rack-rewrite', '~> 1.0.0'
-    	 require 'rack/rewrite'
-    	 use Rack::Rewrite do
-    	 rewrite 	/(\/posts\/(.*))[^\/.]?/, '$1/index.html'
+    require 'rack/rewrite'
+    use Rack::Rewrite do
+      send_file /\/post\/image\/(.*)/,    'content/posts/images/$1'
+      rewrite 	/(\/posts\/(.*))[^\/.]?/, '$1/index.html'
     end
     
     get '/up' do
@@ -109,6 +110,10 @@ module AndrewNicolaou
       #@list     = AndrewNicolaou::Frontend::Views::Post.new.list(:published => true)
       mustache :post
     end
+    
+#    get '/post/images/:image' do 
+#      @image_file_name = params[:image]
+#      
     
     get /(\/post\/(.*))[^\/.]?/ do 
       @post_list = false
