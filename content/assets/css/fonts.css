@@ -27,3 +27,8 @@
   font-family: "titillium-title";
   src: url(/assets/fonts/titillium/TitilliumTitle12.otf);
 }
+
+@font-face {
+  font-family: "league-gothic";
+  src: url(/assets/fonts/LeagueGothic/LeagueGothic.otf);
+}
