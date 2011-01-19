@@ -67,6 +67,7 @@ module AndrewNicolaou
     use Rack::Rewrite do
       send_file /\/post\/image\/(.*)/,    'content/posts/images/$1'
       rewrite 	/(\/posts\/(.*))[^\/.]?/, '$1/index.html'
+      r302   /\/openid(.*)/, '/'
     end
     
     get '/up' do
