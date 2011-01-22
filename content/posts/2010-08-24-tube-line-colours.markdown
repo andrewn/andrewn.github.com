@@ -7,32 +7,6 @@ published: true
 
 ---
 
-<style type='text/css'>
-  table {
-    margin-top: 15px;
-    margin-left: 5px;
-    margin-bottom: 15px;
-  }
-  
-  tr th {
-    font-weight: bold;
-    border-bottom: 1px solid #AAA;
-  }
-  
-  tr td {
-    border-bottom: 1px solid #EEE;
-  }
-
-  table .line {
-    width: 50%;
-  }
-  
-  table .hex,
-  table .rgb {
-    width: 25%;
-  }
-</style>
-
 <table id="tube-line-col">
   <colgroup class="line"></colgroup>
   <colgroup class="hex"></colgroup>
