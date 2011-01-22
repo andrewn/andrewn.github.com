@@ -51,6 +51,11 @@ module AndrewNicolaou
           @meta['title']
         end
         
+        def more
+          process! unless @processed
+          @meta['morelinks']
+        end
+        
         def list(opts={})
           Dir['content/posts/*.*'].map do |item|
             

@@ -2,7 +2,9 @@
 
 layout: default
 title: London Underground line colours
-morelinks: - [ "Colour Standard", "http://www.tfl.gov.uk/assets/downloads/corporate/tfl-colour-standard-issue03.pdf" ]
+morelinks:
+  - title: "Colour Standard"
+    url: "http://www.tfl.gov.uk/assets/downloads/corporate/tfl-colour-standard-issue03.pdf"
 published: true
 
 ---

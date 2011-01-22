@@ -205,6 +205,11 @@ ol li {
   width: 600px;
 }
 
+.more-info li {
+  list-style: none;
+  padding: 0;
+}
+
 #greetings h2 {
   width: 270px;
   font-size: 3em;
