@@ -45,11 +45,16 @@ module AndrewNicolaou
       config.also_reload "services.rb"
     end
     
+    set :cache_max_age, 31557600
+    
     ## This before filter ensures that your pages are only ever served 
     ## once (per deploy) by Sinatra, and then by Varnish after that
+    ## Homepage should have a different cache time as otherwise the Pinboard
+    ## module would never update.
+    ## TODO Investigate ESI fragment caching
     unless development?
-      before do
-        response.headers['Cache-Control'] = 'public, max-age=31557600' # 1 year
+      after do
+        response.headers['Cache-Control'] = 'public, max-age=#{settings.cache_max_age}' # 1 year
       end
     end
     
@@ -75,6 +80,7 @@ module AndrewNicolaou
     end
     
     get '/' do
+      set :cache_max_age = 600
       mustache :index
     end
     
