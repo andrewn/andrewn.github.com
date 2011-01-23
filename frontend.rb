@@ -46,6 +46,7 @@ module AndrewNicolaou
     end
     
     set :cache_max_age, 31557600
+    set :cache_max_age_override, nil
     
     ## This before filter ensures that your pages are only ever served 
     ## once (per deploy) by Sinatra, and then by Varnish after that
@@ -54,7 +55,12 @@ module AndrewNicolaou
     ## TODO Investigate ESI fragment caching
     unless development?
       after do
-        response.headers['Cache-Control'] = 'public, max-age=#{settings.cache_max_age}' # 1 year
+        cache_max_age = settings.cache_max_age
+        if settings.cache_max_age_override
+          cache_max_age = settings.cache_max_age_override
+          settings.cache_max_age_override = nil
+        end
+        response.headers['Cache-Control'] = "public, max-age=#{cache_max_age}" # 1 year
       end
     end
     
@@ -80,7 +86,7 @@ module AndrewNicolaou
     end
     
     get '/' do
-      set :cache_max_age = 600
+      settings.cache_max_age_override = 600
       mustache :index
     end
     
