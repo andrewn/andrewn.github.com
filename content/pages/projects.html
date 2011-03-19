@@ -1,0 +1,43 @@
+<script type="text/javascript">
+  
+  var $list;
+
+  function init() {
+   var $list = $(".projects-list");
+
+   $list.isotope({
+          layoutMode : 'straightDown'
+          //, masonry : {
+          //  columnWidth: 220
+          //}
+        }
+    );
+
+    $('nav a').click( function() {
+      var sel = $(this).attr('data-sel');
+      $list.isotope( { filter:sel } );
+    });
+  }
+
+  $(init);
+</script>
+
+<nav>
+  <li><a href="#all"        data-sel="*">Show all</a>
+  <li><a href="#labs"       data-sel=".labs">Labs</a>
+  <li><a href="#freelance"  data-sel=".client.freelance">Freelance</a>
+  <li><a href="#bbc"        data-sel=".client.bbc">BBC</a>
+</nav>
+
+<ul class="projects-list">
+  <li class="labs">
+    <h3>Project 1</h3>
+  
+  <li class="client freelance">
+    <h3>Project 2</h3>
+
+  <li class="client bbc">
+    <h3>Project 3</h3>
+
+  <li class="labs">
+    <h3>Project 4</h3>

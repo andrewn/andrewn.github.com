@@ -96,7 +96,14 @@ module AndrewNicolaou
       @page_id  = "cv"
       mustache :page
     end
-    
+  
+    get '/projects' do 
+      @title    = "Projects"
+      @source   = "content/pages/projects.html"
+      @page_id  = "project"
+      mustache :page
+    end
+
     get '/books/:year/:month' do
       month = params[:month]
       year  = params[:year].to_i
@@ -132,7 +139,6 @@ module AndrewNicolaou
       @post_list = false
       @url = params[:captures].first
       mustache :post
-    end
-    
+    end    
   end
 end

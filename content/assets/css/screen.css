@@ -561,3 +561,21 @@ ul.books li {
   min-height: 85px;
   padding-left: 65px;
 }
+
+
+#project ul,
+#project ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#project ul li {
+    float: left;
+    /*
+    width: 24%;
+    border: 1px solid #AAA;
+    */
+}
+
+
