@@ -63,6 +63,20 @@ module AndrewNicolaou
         response.headers['Cache-Control'] = "public, max-age=#{cache_max_age}" # 1 year
       end
     end
+
+    # Ensure that HTML, CSS and JS are all set
+    # to charset utf-8
+    # http://geminstallthat.wordpress.com/2009/04/22/sinatra-utf-8-content-type-before-filter/
+    CONTENT_TYPES = {:html => 'text/html', :css => 'text/css', :js  => 'application/javascript'}
+    before do
+      request_uri = case request.env['REQUEST_URI']
+        when /\.css$/ : :css
+        when /\.js$/  : :js
+        else          :html
+      end
+      content_type CONTENT_TYPES[request_uri], :charset => 'utf-8'
+    end
+
     
     #require 'rack/bug/panels/mustache_panel'
     #use Rack::Bug::MustachePanel
