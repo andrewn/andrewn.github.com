@@ -2,8 +2,7 @@ require 'sinatra/base'
 
 #require 'vendor/rack-esi/lib/rack/esi'
 
-#require 'esi-for-rack'
-
+#require 'esi_for_rack'
 require 'rack-esi'
 
 module AndrewNicolaou
@@ -11,6 +10,7 @@ module AndrewNicolaou
     use Rack::ShowExceptions
     use Rack::MethodOverride
     
+    #use EsiForRack
     use Rack::ESI
     
     use AndrewNicolaou::Services
