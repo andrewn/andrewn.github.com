@@ -1,10 +1,16 @@
 require 'sinatra/base'
-require 'vendor/rack-esi/lib/rack/esi'
+
+#require 'vendor/rack-esi/lib/rack/esi'
+
+#require 'esi-for-rack'
+
+require 'rack-esi'
 
 module AndrewNicolaou
   class Frontend < Sinatra::Base
     use Rack::ShowExceptions
     use Rack::MethodOverride
+    
     use Rack::ESI
     
     use AndrewNicolaou::Services
@@ -37,6 +43,7 @@ module AndrewNicolaou
     require "sinatra/reloader" if development?
     configure :development do | config |
       puts "in development"
+      #enable :logging
       register Sinatra::Reloader
       config.also_reload "models/*.rb"
       config.also_reload "layout/views/*.rb"
