@@ -85,6 +85,7 @@ module AndrewNicolaou
 
       # set domain of incoming request
       @host = "#{request.scheme}://#{request.host_with_port}"
+      warn "App host is: " + @host
     end
 
     
