@@ -7,8 +7,8 @@ require 'vendor/rack-esi/lib/rack/esi'
 
 module AndrewNicolaou
   class Frontend < Sinatra::Base
-    use EsiForRack
-    #use Rack::ESI
+    #use EsiForRack
+    use Rack::ESI
     
     use Rack::ShowExceptions
     use Rack::MethodOverride
