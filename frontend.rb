@@ -1,8 +1,8 @@
 require 'sinatra/base'
 
-#require 'vendor/rack-esi/lib/rack/esi'
+require 'vendor/rack-esi/lib/rack/esi'
 
-require 'esi_for_rack'
+#require 'esi_for_rack'
 #require 'rack-esi'
 
 module AndrewNicolaou
