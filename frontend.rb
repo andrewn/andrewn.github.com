@@ -2,16 +2,16 @@ require 'sinatra/base'
 
 #require 'vendor/rack-esi/lib/rack/esi'
 
-#require 'esi_for_rack'
-require 'rack-esi'
+require 'esi_for_rack'
+#require 'rack-esi'
 
 module AndrewNicolaou
   class Frontend < Sinatra::Base
+    use EsiForRack
+    #use Rack::ESI
+    
     use Rack::ShowExceptions
     use Rack::MethodOverride
-    
-    #use EsiForRack
-    use Rack::ESI
     
     use AndrewNicolaou::Services
     
@@ -82,6 +82,9 @@ module AndrewNicolaou
         else          :html
       end
       content_type CONTENT_TYPES[request_uri], :charset => 'utf-8'
+
+      # set domain of incoming request
+      @host = "#{request.scheme}://#{request.host_with_port}"
     end
 
     
