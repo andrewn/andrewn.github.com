@@ -1,3 +1,5 @@
+require 'date'
+require 'yaml'
 module AndrewNicolaou
   class Frontend
     module Views
