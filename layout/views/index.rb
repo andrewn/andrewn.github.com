@@ -10,6 +10,22 @@ module AndrewNicolaou
         def title
           nil
         end
+
+        @greetings = [
+          "Hola", "Guten tag", "Hello", "Καλη μερά"
+        ]
+
+        def greeting
+          "Hola"
+        end
+
+        require 'uri'
+        require 'net/http'
+        # TODO  Error handling and default include response
+        #       for error conditions
+        def bookmarks
+          Net::HTTP.get( URI.parse("#{@host}/service/pinboard") )
+        end
         
         def posts
           list = AndrewNicolaou::Frontend::Views::Post.new.list(:published => true)          

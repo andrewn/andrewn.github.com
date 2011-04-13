@@ -15,10 +15,14 @@ class PinboardProcessor
     rss_url = "http://feeds.pinboard.in/rss/u:andrewn"
     proxy = nil
     
-    doc = open(rss_url, :proxy => proxy) { |f| Hpricot::XML(f) }
-    children = doc.search("//item").slice(0 , limit)
-    
-    @html = create_html_from_rss_items( children, html_template )
+    begin
+      doc = open(rss_url, :proxy => proxy) { |f| Hpricot::XML(f) }
+      children = doc.search("//item").slice(0 , limit)
+      @html = create_html_from_rss_items( children, html_template )
+    rescue Exception
+      warn "PinboardProcessor: Exception fetching data"
+      @html = "<p>No bookmarks available.</p>"
+    end
   end
   
   def html(params={})
