@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-require 'vendor/rack-esi/lib/rack/esi'
+#require 'vendor/rack-esi/lib/rack/esi'
 
 #require 'esi_for_rack'
 #require 'rack-esi'
@@ -8,7 +8,7 @@ require 'vendor/rack-esi/lib/rack/esi'
 module AndrewNicolaou
   class Frontend < Sinatra::Base
     #use EsiForRack
-    use Rack::ESI
+    #use Rack::ESI
     
     use Rack::ShowExceptions
     use Rack::MethodOverride
