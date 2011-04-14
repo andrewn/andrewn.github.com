@@ -21,10 +21,14 @@ module AndrewNicolaou
 
         require 'uri'
         require 'net/http'
-        # TODO  Error handling and default include response
+        # TODO  Error handling (Exception, 404) and default include response
         #       for error conditions
         def bookmarks
-          Net::HTTP.get( URI.parse("#{@host}/service/pinboard") )
+          begin
+            Net::HTTP.get( URI.parse("#{@host}/service/pinboard") )
+          rescue Exception
+            ""
+          end
         end
         
         def posts
