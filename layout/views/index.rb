@@ -2,7 +2,15 @@ module AndrewNicolaou
   class Frontend
     module Views      
       class Index < Post
-        
+
+        HELLO = "Hello!"
+
+        def initialize
+          @greetings = [
+            HELLO, "Hola", HELLO, "Guten tag", HELLO, "Καλη μερά"
+          ]
+        end
+
         def user_friendly_date
           self[:date_object].strftime( '%d %b %Y' )
         end
@@ -11,12 +19,9 @@ module AndrewNicolaou
           nil
         end
 
-        @greetings = [
-          "Hola", "Guten tag", "Hello", "Καλη μερά"
-        ]
-
         def greeting
-          "Hola"
+          greeting_id = rand( @greetings.length )
+          @greetings[greeting_id]
         end
 
         require 'uri'
