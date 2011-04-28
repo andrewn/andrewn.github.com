@@ -10,6 +10,10 @@ class PinboardProcessor
   @html
   
   def initialize    
+
+    @html = "No bookmarks."
+    return
+
     limit = 5
     html_template = '<li><a href="{link}">{title}</a></li>'
     rss_url = "http://feeds.pinboard.in/rss/u:andrewn"
