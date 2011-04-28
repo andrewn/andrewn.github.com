@@ -16,7 +16,11 @@ module AndrewNicolaou
         end
         
         def title
-          "Andrew Nicolaou"
+          nil
+        end
+
+        def page_title
+          title.nil? ? "Andrew Nicolaou" : title
         end
 
         def greeting
