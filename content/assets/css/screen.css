@@ -214,12 +214,14 @@ ol li {
   width: 270px;
   font-size: 3em;
   margin: 0;
+  padding-top: 6px;
 }
 
 #intro {
   width: 340px;
   font-size: 2em;
   margin:0;
+  padding-top: 13px;
 }
 
 #intro p {
@@ -237,7 +239,7 @@ ol li {
 */
 #sidebar {
   position: absolute;
-  top: 15px;
+  top: 0;
   left: 355px;
   border: 1px solid #ccc;
   
