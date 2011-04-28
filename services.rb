@@ -26,6 +26,8 @@ module AndrewNicolaou
     #
     get "#{SERVICE}/:service" do |service|
       require "services/#{service}" 
+      cache_max_age = 60 * 10
+      response.headers['Cache-Control'] = "public, max-age=#{cache_max_age}"
       Kernel.const_get( service.capitalize + 'Processor' ).new.html(params)
     end
     
