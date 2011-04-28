@@ -16,7 +16,7 @@ module AndrewNicolaou
         end
         
         def title
-          nil
+          "Andrew Nicolaou"
         end
 
         def greeting
