@@ -30,8 +30,9 @@ module AndrewNicolaou
         #       for error conditions
         def bookmarks
           begin
-            puts "Host: #{@host}"
-            Net::HTTP.get( URI.parse("#{@host}/service/pinboard") )
+            uri = "#{@host}/service/pinboard"
+            puts "Bookmarks URI: #{uri}"
+            Net::HTTP.get( URI.parse(uri) )
           rescue Exception
             ""
           end
