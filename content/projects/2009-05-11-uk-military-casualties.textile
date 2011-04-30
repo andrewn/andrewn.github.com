@@ -1,9 +1,0 @@
----
-
-title: UK Military Casualties statistics
-tech: [ Flash, Perl, Modest Maps ]
-link: ["View the map", "http://news.bbc.co.uk/1/hi/uk/7780497.stm"]
-
----
-
-A project.

@@ -6,12 +6,9 @@ tech: [ HTML, CSS, Javascript, PHP ]
 
 ---
 
-Templates for the Wilkinson King Architects website. 
+The BBC Weather website is one of the most popular Weather sites in the UK. The site had moved to a new technical platform nine months before which included a new design.
 
-The practice had an existing clean, minimal design but a site that under the hood was showing its age. This made updating the site with new projects a burden.
+This project was a visual refresh on the existing platform taking in response to user feedback about the existing design. A key requirement was a new 'Forecast grid' content object displaying the next 5 days weather summary and providing a mechanism to get detailed weather information for a particular day.
 
-I worked with them to rebuild the pages using modern standards and added some new interactive elements such as image carousel and a slideshow of images on project pages. These features are designed to activate automatically if certain conditions are met e.g. when a certain number of images are added to the page. This means there's no technical configuration required when adding content to the site -- everything 'just works.'
+The project was delivered to a very tight deadline.
 
-The templates are built to work using the Jekyll static site publishing app, meaning that the content can be added by simply creating a new text file and adding some images to a directory. Jekyll handles the rest and creates a series of static files that can be dragged onto the company's web server.
-
- 

@@ -1,0 +1,15 @@
+---
+
+title: Wilkinson King Architects
+link: [ "Wilkinson King Architects", "http://www.wilkinsonking.com/" ]
+tech: [ HTML, CSS, Javascript, Ruby ]
+
+---
+
+Developed templates for this architect's practice website.
+
+The practice had an existing clean, minimal design but the site markup made updating the site with new projects a burden.
+
+I worked with them to rebuild the pages using modern standards and added some new interactive elements such as image carousel and a slideshow of images on project pages. These features are designed to activate automatically if certain conditions are met e.g. when a certain number of images are added to the page. This means there's no technical configuration required when adding content to the site -- everything 'just works'.
+
+The templates are built to work using the Jekyll static site publishing app, meaning that the content can be added by simply creating a new text file with the project's contents and adding some images to a directory. This makes it easy for someone in the company to add content without having to write any markup.
