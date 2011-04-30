@@ -1,7 +1,7 @@
 /*
   Debug
 */
-body.grid { 
+body.debug { 
   background: transparent url(/assets/img/grid.png) repeat; 
 }
 

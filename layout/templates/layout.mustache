@@ -19,23 +19,11 @@
   
   <div id="content">
 
-    <h2>{{{ title }}}</h2>
-
     {{{ yield }}}
-
-    {{> more_links }}
-    
-  {{#service_typekit}}   
-    <div id="colophon">
-      <p><a href="http://typekit.com/colophons/iaa3xcz">Colophon</a></p>
-    </div>
-  {{/service_typekit}}
   
   </div> <!-- #content -->
-  
-  <script type="text/javascript" src="/assets/js/page_specific.js"></script>
-  {{> analytics }}
 
+  {{> analytics }}
   {{> debug }}
 </body>
 </html>
