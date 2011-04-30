@@ -4,13 +4,13 @@ module AndrewNicolaou
     module Views
       class Project < Layout
         
-        attr_accessor :name, :summary, :link
+        attr_accessor :name, :description, :link
         
         def initialize(content={})
           p content
           @name     = content["title"]
           @tech     = content["tech"]
-          @summary  = content["content"]
+          @description  = content["content"]
           @link     = {
             'name'=> content["link"][0],
             'url' => content["link"][1]
@@ -30,6 +30,9 @@ module AndrewNicolaou
           return items
         end
 
+        def summary
+          @description.to_a[0]
+        end
       end
     end
   end
