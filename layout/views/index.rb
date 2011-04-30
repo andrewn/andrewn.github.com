@@ -28,18 +28,10 @@ module AndrewNicolaou
           @greetings[greeting_id]
         end
 
-        require 'uri'
-        require 'net/http'
-        # TODO  Error handling (Exception, 404) and default include response
-        #       for error conditions
-        def bookmarks
-          begin
-            uri = "#{@host}/service/pinboard"
-            puts "Bookmarks URI: #{uri}"
-            Net::HTTP.get( URI.parse(uri) )
-          rescue Exception
-            ""
-          end
+        def projects
+          @projects_list.map { |project| 
+            Project.new( project )
+          }
         end
         
         def posts

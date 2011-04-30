@@ -1,10 +1,8 @@
 ---
 
-layout: default
-title: "Project: Wilkinson King Architects"
-morelinks: - [ "Wilkinson King Architects", "http://www.wilkinsonking.com/" ]
-category: [ html, javascript, build ]
-published: false
+title: Wilkinson King Architects
+link: [ "Wilkinson King Architects", "http://www.wilkinsonking.com/" ]
+tech: [ HTML, CSS, Javascript, Ruby, Build ]
 
 ---
 

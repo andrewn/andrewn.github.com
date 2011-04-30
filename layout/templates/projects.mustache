@@ -1,9 +1,30 @@
 <h1>Recent projects</h1>
 <ul class="projects-list">
 
+  {{#projects}}
+  <li class="{{categories}}">
+    <h3>{{name}}</h3>
+    <p class="tech">
+      {{#tech}}
+        {{^last?}}{{item}}, {{/last?}}
+        {{#last?}}{{item}}{{/last?}}
+      {{/tech}}
+    </p>
+    <div class="summary">
+      {{{summary}}}
+    </div>
+    {{#link}}
+    <a href="{{url}}">{{name}}</a>
+    {{/link}}
+  </li>
+  {{/projects}}
+
   <li class="labs">
     <h3>BBC Weather refresh</h3>
     <p class="tech">Javascript, PHP, CSS, HTML</p>
+    <div class="summary">
+      <p>This is the project summary</p>
+    </div>
     <a href="http://www.bbc.co.uk/weather">View project.</a>
   </li>
 
@@ -29,5 +50,5 @@
     <h3>Olympic Programme Guide</h3>
     <p>Javascript-based programme guide for each BBC channel and red button service during the Beijing Olympics. No longer online.</p>
   </li>
-  
+
 </ul>

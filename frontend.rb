@@ -30,6 +30,8 @@ module AndrewNicolaou
     # Views
     require 'layout/views/layout'
     require 'layout/views/post'
+    require 'layout/views/project'
+
     #require 'layout/helpers/helpers'
     set :mustache, {
       :views     => 'layout/views/',
@@ -38,6 +40,8 @@ module AndrewNicolaou
     
     # Models
     require 'models/book.rb'
+    require 'models/file_store.rb'
+    require 'models/project.rb'
     
     # Development
     require "sinatra/reloader" if development?
@@ -57,9 +61,6 @@ module AndrewNicolaou
     
     ## This before filter ensures that your pages are only ever served 
     ## once (per deploy) by Sinatra, and then by Varnish after that
-    ## Homepage should have a different cache time as otherwise the Pinboard
-    ## module would never update.
-    ## TODO Investigate ESI fragment caching
     unless development?
       after do
         cache_max_age = settings.cache_max_age
@@ -104,6 +105,10 @@ module AndrewNicolaou
       rewrite 	/(\/posts\/(.*))[^\/.]?/, '$1/index.html'
       r302   /\/openid(.*)/, '/'
     end
+
+    ##
+    ## ROUTES
+    ##
     
     get '/up' do
       "up"
@@ -111,6 +116,9 @@ module AndrewNicolaou
     
     get '/' do
       settings.cache_max_age_override = 600
+
+      @projects_list = AndrewNicolaou::Models::Project.find_all
+p @projects
       mustache :index
     end
     
@@ -153,11 +161,7 @@ module AndrewNicolaou
       @title     = "Posts"
       #@list     = AndrewNicolaou::Frontend::Views::Post.new.list(:published => true)
       mustache :post
-    end
-    
-#    get '/post/images/:image' do 
-#      @image_file_name = params[:image]
-#      
+    end   
     
     get /(\/post\/(.*))[^\/.]?/ do 
       @post_list = false
