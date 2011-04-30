@@ -13,8 +13,17 @@ module AndrewNicolaou
         @base_file_path = base_file_path
       end
 
-      def list
-        file_list
+      def list(opts={})
+        file_contents = file_list
+
+        if opts["order_by_latest"]
+          file_contents.reverse!
+          # file_contents = file_contents.sort { |a,b| 
+          #    a["date"] <=> b["date"]
+          # }
+        end
+
+        file_contents
       end
 
       private 
@@ -23,9 +32,10 @@ module AndrewNicolaou
         Dir[dir_path].map do |file_name|
           begin
             filename_metadata = parse_filename_to_metadata( file_name )
+
             file_contents     = parse_content_from_file( file_name )
-            
-            #file_contents.merge!(filename_metadata)
+            file_contents["date"] = filename_metadata[:date_object]
+
             file_contents
           rescue
             # do nothing on error
