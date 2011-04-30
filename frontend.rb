@@ -118,7 +118,7 @@ module AndrewNicolaou
       settings.cache_max_age_override = 600
 
       @projects_list = AndrewNicolaou::Models::Project.find_all
-p @projects
+
       mustache :index
     end
     
