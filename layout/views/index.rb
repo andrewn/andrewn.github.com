@@ -6,9 +6,13 @@ module AndrewNicolaou
         HELLO = "Hello!"
 
         def initialize
-          @greetings = [
-            HELLO, "Hola", HELLO, "Guten tag", HELLO, "Καλη μερά"
-          ]
+          if @multi_lang_greetings
+            @greetings = [
+              HELLO, "Hola", HELLO, "Guten tag", HELLO, "Καλη μερά"
+            ]
+          else
+            @greetings = [HELLO]
+          end
         end
 
         def user_friendly_date
