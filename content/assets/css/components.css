@@ -1,0 +1,64 @@
+/*
+    Intro
+*/
+#intro p { 
+    display:inline;
+    font-size: 2em;
+}
+
+#intro p, #intro a {
+    color: rgba(0,0,0,0.8);
+}
+
+/*
+#intro p.job, #intro p.job a { color: #990; }
+#intro p.job a:hover { color: rgba(153, 153, 0, 0.7); }
+#intro p.freelance, #intro p.freelance a { color: #903; }
+#intro p.email, #intro p.email a { color: #09c; }
+#intro p.elsewhere, #intro p.elsewhere a { color: #09c; }
+*/
+
+
+/*
+    Recent Projects
+*/
+.debug #projects ul li {
+    border: 1px solid green;
+}
+
+#projects ul li {
+    position: relative;
+    width: 308px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    list-style: none;
+}
+
+#projects ul li:nth-child(3n) {
+    margin-right: 0;
+}
+
+#projects .tech {
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 150px;
+}
+
+#projects .thumbnail {
+    float: left;
+    padding-right: 10px;
+    height: 160px;
+}
+
+#projects .thumbnail img {
+
+}
+
+/*
+    Experience
+*/
+#experience {
+    clear: both;
+}

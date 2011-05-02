@@ -1,0 +1,39 @@
+/*
+    layout.css
+
+    Grid:
+        24 columns: 30px
+        23 gutters: 10px
+
+        3 super-columns (composed of 8 col + 7 gut):
+            | 310px | 10px | 310px | 10px | 310px |
+
+        2 super-columns (composed of 12 cols + 11 gut):
+            | 470px | 10px | 470px |
+*/
+html {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+    margin: 0 auto;
+    text-align: left;
+    max-width: 950px;
+}
+
+/*
+  Accessibility
+*/
+#access {
+  display: none;
+}
+
+/*
+    Masthead
+*/
+#masthead #logo a span {
+  display: block;
+  margin-left: -90000px;
+}
