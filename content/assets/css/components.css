@@ -62,3 +62,32 @@
 #experience {
     clear: both;
 }
+
+#experience .section {
+    float: left;
+    width: 310px;
+    margin-right: 10px;
+    list-style: none;
+}
+
+#experience .section:nth-child(3n) {
+    margin-right: 0;
+}
+
+/*
+    Education
+*/
+#education {
+    clear: both;
+}
+
+#education .section {
+    float: left;
+    width: 310px;
+    margin-right: 10px;
+    list-style: none;
+}
+
+#education .section:nth-child(3n) {
+    margin-right: 0;
+}

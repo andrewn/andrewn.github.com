@@ -37,3 +37,8 @@ body {
   display: block;
   margin-left: -90000px;
 }
+
+#footer {
+    clear: both;
+    height: 60px;
+}
