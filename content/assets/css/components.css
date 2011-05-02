@@ -74,6 +74,20 @@
     margin-right: 0;
 }
 
+#experience .section .org {
+    
+}
+
+#experience .section .date {
+    float: right;
+    width: 120px;
+    text-align: right;
+}
+
+#experience .section h5 {
+    clear: right;
+}
+
 /*
     Education
 */
@@ -82,6 +96,7 @@
 }
 
 #education .section {
+    position: relative;
     float: left;
     width: 310px;
     margin-right: 10px;
@@ -90,4 +105,20 @@
 
 #education .section:nth-child(3n) {
     margin-right: 0;
+}
+
+#education .section .title {
+    float: right;
+    width: 230px;
+}
+
+#education .section .grade {
+    position: absolute;
+    left: 0;
+    top: 20px;
+}
+
+#education .section h5 {
+    clear: right;
+    margin-left: 80px;
 }
