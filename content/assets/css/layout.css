@@ -33,6 +33,16 @@ body {
 /*
     Masthead
 */
+#masthead {
+    height: 90px;
+    background: gray;
+}
+
+#masthead #logo {
+  margin-left:16px;
+  padding-top: 16px;
+}
+
 #masthead #logo a span {
   display: block;
   margin-left: -90000px;

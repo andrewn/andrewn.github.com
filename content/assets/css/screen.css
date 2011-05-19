@@ -10,11 +10,6 @@ body.debug {
 
   Grid: 30px, 10px gutter
 */
-
-h1, h2, h3, h4, h5, h6, body {
-  font-family: sans-serif;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -33,10 +28,6 @@ body {
   Line height: 24px (2em)
   
 */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-}
-
 body a {
   color: #000;
 }
@@ -141,7 +132,6 @@ ol li {
 #masthead #logo img {
 	height: 59px;
 	margin-left:  3px;
-	
 }
 
 #masthead #logo a {
