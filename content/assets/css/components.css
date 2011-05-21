@@ -16,7 +16,6 @@
     display: block;
 }
 
-#intro .elsewhere,
 #intro .elsewhere a,
 #intro .email span {
     color: rgba(100,50,100,0.8);
