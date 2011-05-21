@@ -1,12 +1,12 @@
 ---
 
-title: Weather Maps
+title: BBC Weather Maps
 tech: [ Javascript, PHP, geo ]
 link: []
 
 ---
 
-Lead developer on a project to redevelop the maps on the BBC Weather website. The previous map offering was flash-based and utilised fixed views for each area.
+Lead developer on a project to reinvent the way maps are presented. The previous map offering was flash-based and utilised fixed views for each area.
 
 - tile prototypes
 - requirements

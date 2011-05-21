@@ -6,7 +6,7 @@ tech: [ HTML, CSS, Javascript, Ruby ]
 
 ---
 
-Developed templates for this architect's practice website.
+Built a new, standards-based website for this architect's practice.
 
 The practice had an existing clean, minimal design but the site markup made updating the site with new projects a burden.
 

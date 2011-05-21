@@ -6,6 +6,8 @@ tech: [ HTML, CSS, Javascript, PHP ]
 
 ---
 
+Iterate and improve the design and functionality of one of the UK most popular Weather sites.
+
 The BBC Weather website is one of the most popular Weather sites in the UK. The site had moved to a new technical platform nine months before which included a new design.
 
 This project was a visual refresh on the existing platform taking in response to user feedback about the existing design. A key requirement was a new 'Forecast grid' content object displaying the next 5 days weather summary and providing a mechanism to get detailed weather information for a particular day.

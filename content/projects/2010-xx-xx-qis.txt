@@ -6,4 +6,6 @@ link: []
 
 ---
 
+Is a domain name available?
+
 Very simple web service to query domains. For those moments when you have a spark of inspiration and want to know if a domain's available.

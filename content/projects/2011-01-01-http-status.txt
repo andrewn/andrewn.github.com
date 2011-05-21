@@ -6,4 +6,4 @@ link: []
 
 ---
 
-HTTP Status
+What do all those HTTP status codes mean?

@@ -6,4 +6,6 @@ link: [ "View the map", "http://news.bbc.co.uk/sport1/hi/olympics/7493757.stm"]
 
 ---
 
+Venue guide to the 2008 Olympics including blog posts and tweets from BBC Sport's online correspondants in Beijing.
+
 BBC blogs template feed, Twitter geolocation, Perl service, 

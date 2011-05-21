@@ -6,7 +6,7 @@ link: ["View the map", "http://news.bbc.co.uk/sport1/hi/olympic_games/7669416.st
 
 ---
 
-An interactive live map tracking the Beijing Olympics 'heroes parade' integrating geo-located Twitter and Flickr content.
+A map tracking the Olympic heroe's parade route: updated live with geo-located Twitter and Flickr content.
 
 A Perl service was used to poll the journalist's Twitter messages and extracted geo-tagged content. The augmented feed was then published to BBC infrastructure. This ensured that there was reslience in case Twitter failed.
 

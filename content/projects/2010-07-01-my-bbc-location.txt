@@ -6,6 +6,8 @@ link: []
 
 ---
 
+A shared location preference on th BBC News and Weather sites.
+
 My BBC Location is a standard for sharing a site visitor's location preference to offer geographic information that's relevant to them. 
 
 I defined an extensible cookie format to enable different granularities of location to be passed around. For example 'BBC Local regions' or BBC Weather forecast locations. 
