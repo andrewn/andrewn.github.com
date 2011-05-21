@@ -33,6 +33,11 @@
     margin-right: 10px;
     border: 1px solid transparent;
     list-style: none;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+#projects ul li:hover {
+    background-color: rgba(0,0,0,0.05);
 }
 
 #projects ul li:nth-child(3n) {
@@ -57,7 +62,8 @@
 }
 
 #projects .thumbnail img {
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: #FFF;
     padding: 5px;
 }
 
