@@ -2,7 +2,8 @@
 
 title: My BBC Location
 tech: [ Javascript, standards ]
-link: []
+link: [ 'BBC News personalisation panel', 'http://www.bbc.co.uk/news/#geographic-news-digests', 
+        'BBC Weather', 'http://www.bbc.co.uk/weather' ]
 
 ---
 

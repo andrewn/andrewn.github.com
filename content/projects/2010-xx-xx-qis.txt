@@ -3,6 +3,7 @@
 title: Q-Is?
 tech: [ Heroku, Sinatra, Ruby ]
 link: []
+published: false
 
 ---
 

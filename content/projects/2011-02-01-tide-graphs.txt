@@ -2,7 +2,7 @@
 
 title: BBC Weather Tide Graphs
 tech: [ Javascript, SVG, Raphael ]
-link: []
+link: [ 'View a graph', 'http://news.bbc.co.uk/weather/coast_and_sea/tide_tables/2/113/' ]
 
 ---
 
