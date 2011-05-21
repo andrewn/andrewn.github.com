@@ -6,16 +6,19 @@
     font-size: 2em;
 }
 
-#intro p, #intro a {
+#intro p, #intro a,
+#intro .email span span {
     color: rgba(0,0,0,0.8);
 }
 
-#intro .elsewhere {
+#intro .elsewhere,
+#intro .email {
     display: block;
 }
 
 #intro .elsewhere,
-#intro .elsewhere a {
+#intro .elsewhere a,
+#intro .email span {
     color: rgba(100,50,100,0.8);
 
      -moz-transition: color 0.4s ease-out;  
