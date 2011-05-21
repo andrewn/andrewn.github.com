@@ -11,10 +11,16 @@ module AndrewNicolaou
           @name     = content["title"]
           @tech     = content["tech"]
           @description  = content["content"]
-          @link     = {
-            'name'=> content["link"][0],
-            'url' => content["link"][1]
-            } if content["link"]
+          @link = []
+
+          if content["link"]
+            content["link"].each_with_index do |l,i|
+              @link << {
+                'name'=> content["link"][i],
+                'url' => content["link"][i + 1]
+              } if (i % 2) == 0
+            end
+          end
         end
 
         def tech
