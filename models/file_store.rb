@@ -52,6 +52,8 @@ module AndrewNicolaou
         if file_contents =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
           file_contents = file_contents[($1.size + $2.size)..-1]
         end
+
+        format = 'markdown' if format == 'txt'
         
         case format
         when 'markdown'

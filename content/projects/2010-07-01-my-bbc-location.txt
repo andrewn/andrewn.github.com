@@ -1,0 +1,18 @@
+---
+
+title: My BBC Location
+tech: [ Javascript, standards ]
+link: []
+
+---
+
+My BBC Location is a standard for sharing a site visitor's location preference to offer geographic information that's relevant to them. 
+
+I defined an extensible cookie format to enable different granularities of location to be passed around. For example 'BBC Local regions' or BBC Weather forecast locations. 
+
+This feature is currently used to personalise the BBC News frontpage and BBC Weather site. Extending to other BBC sites is planned.
+
+A shared javascript library provides an API to enable:
+- searching for a location
+- selecting a location
+- storing/retrieving the shared location preference from a cookie

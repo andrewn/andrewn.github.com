@@ -1,0 +1,11 @@
+---
+
+title: Tide Graphs
+tech: [ Javascript, SVG, Raphael ]
+link: []
+
+---
+
+Improve the rendering of tide graphs on the Weather website. Legacy graphs were server-side generated had problems. New graphs:
+ - easier to read, 
+ - adaptive scale to match content displayed 
