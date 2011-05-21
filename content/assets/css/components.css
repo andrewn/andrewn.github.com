@@ -14,6 +14,21 @@
     display: block;
 }
 
+#intro .elsewhere,
+#intro .elsewhere a {
+    color: rgba(100,50,100,0.8);
+
+     -moz-transition: color 0.4s ease-out;  
+       -o-transition: color 0.4s ease-out;  
+  -webkit-transition: color 0.4s ease-out;  
+      -ms-transition: color 0.4s ease-out;  
+          transition: color 0.4s ease-out;  
+}
+
+#intro .elsewhere a:hover {
+    color: rgba(0,0,0,0.8);
+}
+
 /*
 #intro p.job, #intro p.job a { color: #990; }
 #intro p.job a:hover { color: rgba(153, 153, 0, 0.7); }
@@ -38,6 +53,12 @@
     border: 1px solid transparent;
     list-style: none;
     border-bottom: 2px solid rgba(0,0,0,0.1);
+
+     -moz-transition: background-color 0.3s ease-out;  
+       -o-transition: background-color 0.3s ease-out;  
+  -webkit-transition: background-color 0.3s ease-out;  
+      -ms-transition: background-color 0.3s ease-out;  
+          transition: background-color 0.3s ease-out;  
 }
 
 #projects ul li:hover {
