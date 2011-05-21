@@ -1,7 +1,7 @@
 ---
 
 title: HTTP Status
-tech: [ Ruby, Heroku, Sinatra ]
+tech: [ Ruby, Heroku, Sinatra, open source ]
 link: [ 'View site', 'http://http-status.heroku.com/' ]
 
 ---
