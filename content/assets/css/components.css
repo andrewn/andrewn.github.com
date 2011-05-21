@@ -39,9 +39,13 @@
     margin-right: 0;
 }
 
+#projects ul li h3 {
+    line-height: 28px;
+}
+
 #projects .tech {
     position: absolute;
-    top: 95px;
+    top: 137px;
     left: 0;
     width: 150px;
 }
@@ -53,7 +57,8 @@
 }
 
 #projects .thumbnail img {
-
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 5px;
 }
 
 /*
