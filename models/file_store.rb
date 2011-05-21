@@ -35,6 +35,7 @@ module AndrewNicolaou
 
             file_contents     = parse_content_from_file( file_name )
             file_contents["date"] = filename_metadata[:date_object]
+            file_contents["slug"] = filename_metadata[:slug]
 
             file_contents
           rescue

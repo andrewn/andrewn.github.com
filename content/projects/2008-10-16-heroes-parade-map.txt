@@ -1,12 +1,12 @@
 ---
 
-title: Olympic and Paralympic Heroes Parade live map
+title: Olympic and Paralympic Parade live map
 tech: [ Flash, Perl, Modest Maps ]
 link: ["View the map", "http://news.bbc.co.uk/sport1/hi/olympic_games/7669416.stm"]
 
 ---
 
-A map tracking the Olympic heroe's parade route: updated live with geo-located Twitter and Flickr content.
+A map tracking the Olympic parade route: updated live with geo-located Twitter and Flickr content.
 
 A Perl service was used to poll the journalist's Twitter messages and extracted geo-tagged content. The augmented feed was then published to BBC infrastructure. This ensured that there was reslience in case Twitter failed.
 

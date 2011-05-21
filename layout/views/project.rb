@@ -4,14 +4,15 @@ module AndrewNicolaou
     module Views
       class Project < Layout
         
-        attr_accessor :name, :description, :link
+        attr_accessor :name, :description, :link, :slug
         
         def initialize(content={})
           p content
           @name     = content["title"]
           @tech     = content["tech"]
           @description  = content["content"]
-          @link = []
+          @link     = []
+          @slug     = content["slug"]
 
           if content["link"]
             content["link"].each_with_index do |l,i|
@@ -34,6 +35,10 @@ module AndrewNicolaou
             items.push(items_hash)
           }
           return items
+        end
+
+        def thumbnail
+          "#{@slug}-thumb.png"
         end
 
         def summary
