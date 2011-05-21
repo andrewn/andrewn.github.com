@@ -10,8 +10,8 @@
     </div>
     <p class="tech">
       {{#tech}}
-        {{^last?}}{{item}}, {{/last?}}
-        {{#last?}}{{item}}{{/last?}}
+        {{^last?}}<span>{{item}}</span>, {{/last?}}
+        {{#last?}}<span>{{item}}</span>{{/last?}}
       {{/tech}}
     </p>
     <div class="summary">

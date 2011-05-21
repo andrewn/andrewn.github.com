@@ -82,6 +82,10 @@
     width: 150px;
 }
 
+#projects .tech span {
+    white-space: nowrap;
+}
+
 #projects .thumbnail {
     float: left;
     padding-right: 10px;
