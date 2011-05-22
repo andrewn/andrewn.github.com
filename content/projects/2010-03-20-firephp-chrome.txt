@@ -3,7 +3,8 @@
 title: FirePHP for Chrome
 tech: [ Javascript, Google Chrome, open source ]
 link: [ 'View the code', 'https://github.com/andrewn/firephp-chrome' ]
-published: false
+published: true
+thumbnail: false
 
 ---
 

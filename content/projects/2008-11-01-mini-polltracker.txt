@@ -3,6 +3,7 @@
 title: US Election mini poll tracker
 link: [ "View polltracker", "http://news.bbc.co.uk/1/hi/world/americas/us_elections_2008/7699058.stm#polltracker_466" ]
 tech: [ Flash ]
+published: false
 
 ---
 

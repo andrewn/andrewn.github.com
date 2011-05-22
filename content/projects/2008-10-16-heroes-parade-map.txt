@@ -3,6 +3,7 @@
 title: Olympic and Paralympic Parade live map
 tech: [ Flash, Perl, Modest Maps ]
 link: ["View the map", "http://news.bbc.co.uk/sport1/hi/olympic_games/7669416.stm"]
+published: false
 
 ---
 
