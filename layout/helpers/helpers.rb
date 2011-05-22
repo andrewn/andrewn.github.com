@@ -1,5 +1,5 @@
 module ViewHelpers
-  def spec_to_date
-    "DATE"
+  def test_helper
+    "TEST"
   end
 end
