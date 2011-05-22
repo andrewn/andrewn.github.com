@@ -1,6 +1,6 @@
 #ENV['RACK_ENV'] = "development"
 
 require 'services'
-require 'frontend'
+require 'app/frontend'
 
 run AndrewNicolaou::Frontend
