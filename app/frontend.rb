@@ -116,57 +116,55 @@ module AndrewNicolaou
     
     get '/' do
       settings.cache_max_age_override = 600
-
       @projects_list = AndrewNicolaou::Models::Project.find_all
-
       mustache :index
     end
     
-    get '/about' do 
-      @title    = "About"
-      @source   = "content/pages/about.html"
-      @page_id  = "cv"
-      mustache :page
-    end
+    #get '/about' do 
+    #  @title    = "About"
+    #  @source   = "content/pages/about.html"
+    #  @page_id  = "cv"
+    #  mustache :page
+    #end
   
-    get '/projects' do 
-      @title    = "Projects"
-      @source   = "content/pages/projects.html"
-      @page_id  = "project"
-      mustache :page
-    end
+    #get '/projects' do 
+    #  @title    = "Projects"
+    #  @source   = "content/pages/projects.html"
+    #  @page_id  = "project"
+    #  mustache :page
+    #end
 
-    get '/books/:year/:month' do
-      month = params[:month]
-      year  = params[:year].to_i
-      
-      # Get book data
-      data = YAML::load( File.open( 'content/books/books.yaml' ) )
-      @isbns = data["books"][year][month].map { |b| b['isbn'] }
-      
-      @books = []
-      @isbns.each do | isbn | 
-        @books.push AndrewNicolaou::Models::Book.find_by_isbn( isbn )
-      end.compact!
-
-      DELIM = "&raquo;"
-      @title    = "Books read #{DELIM} #{year} #{DELIM} #{month}"
-
-      #@source   = "content/pages/about.html"
-      mustache :book
-    end
+    #get '/books/:year/:month' do
+    #  month = params[:month]
+    #  year  = params[:year].to_i
+    #  
+    #  # Get book data
+    #  data = YAML::load( File.open( 'content/books/books.yaml' ) )
+    #  @isbns = data["books"][year][month].map { |b| b['isbn'] }
+    #  
+    #  @books = []
+    #  @isbns.each do | isbn | 
+    #    @books.push AndrewNicolaou::Models::Book.find_by_isbn( isbn )
+    #  end.compact!
+    #  
+    #  DELIM = "&raquo;"
+    #  @title    = "Books read #{DELIM} #{year} #{DELIM} #{month}"
+    #  
+    #  #@source   = "content/pages/about.html"
+    #  mustache :book
+    #end
     
-    get '/post' do
-      @post_list = true
-      @title     = "Posts"
-      #@list     = AndrewNicolaou::Frontend::Views::Post.new.list(:published => true)
-      mustache :post
-    end   
+    #get '/post' do
+    #  @post_list = true
+    #  @title     = "Posts"
+    #  #@list     = AndrewNicolaou::Frontend::Views::Post.new.list(:published => true)
+    #  mustache :post
+    #end   
     
-    get /(\/post\/(.*))[^\/.]?/ do 
-      @post_list = false
-      @url = params[:captures].first
-      mustache :post
-    end    
+    #get /(\/post\/(.*))[^\/.]?/ do 
+    #  @post_list = false
+    #  @url = params[:captures].first
+    #  mustache :post
+    #end    
   end
 end
