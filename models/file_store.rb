@@ -69,6 +69,7 @@ module AndrewNicolaou
 
         data = {}
         data.merge!(file_metadata)
+
         data['content'] = contents
         return data
       end

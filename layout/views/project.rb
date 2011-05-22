@@ -4,7 +4,7 @@ module AndrewNicolaou
     module Views
       class Project < Layout
         
-        attr_accessor :name, :description, :link, :slug
+        attr_accessor :name, :description, :link, :slug, :has_thumbnail
         
         def initialize(content={})
           p content
@@ -13,6 +13,7 @@ module AndrewNicolaou
           @description  = content["content"]
           @link     = []
           @slug     = content["slug"]
+          @has_thumbnail = content['thumbnail'].nil? ? true : content['thumbnail']
 
           if content["link"]
             content["link"].each_with_index do |l,i|
@@ -39,6 +40,10 @@ module AndrewNicolaou
 
         def thumbnail
           "#{@slug}-thumb.png"
+        end
+
+        def has_thumbnail?
+          @has_thumbnail
         end
 
         def summary
