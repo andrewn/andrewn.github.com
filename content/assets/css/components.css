@@ -51,6 +51,7 @@
 #projects ul li {
     position: relative;
     width: 308px;
+    min-height: 188px;
     float: left;
     margin-right: 10px;
     border: 1px solid transparent;
