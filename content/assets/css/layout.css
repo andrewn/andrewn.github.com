@@ -34,17 +34,18 @@ body {
     Masthead
 */
 #masthead {
-    height: 90px;
+  height: 90px;
      -moz-transition: background-color 0.4s ease-out;  
        -o-transition: background-color 0.4s ease-out;  
   -webkit-transition: background-color 0.4s ease-out;  
       -ms-transition: background-color 0.4s ease-out;  
           transition: background-color 0.4s ease-out; 
-    background-color: rgba(0,0,0,0.5);
+      
+  background-color: rgb(60,60,60);
 }
 
 #masthead:hover {
-    background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 153, 204, 1);
 }
 
 #masthead #logo {

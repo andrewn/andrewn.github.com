@@ -1,3 +1,7 @@
+section h1 {
+  color: rgb(60,60,60);
+}
+
 /*
     Intro
 */
@@ -29,10 +33,15 @@
 }
 
 #intro .elsewhere a:hover {
-    color: rgba(100,50,100,0.8);
+    color: rgba(0, 153, 204, 1);
 }
 
 /*
+    color: rgba(153, 153, 0, 1);
+    color: rgba(100, 50, 100,0.8);
+    color: rgba(153, 0, 51, 1);
+    color: rgba(0, 153, 204, 1);
+
 #intro p.job, #intro p.job a { color: #990; }
 #intro p.job a:hover { color: rgba(153, 153, 0, 0.7); }
 #intro p.freelance, #intro p.freelance a { color: #903; }
