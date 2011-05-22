@@ -8,7 +8,7 @@
 
 #intro p, #intro a,
 #intro .email span span {
-    color: rgba(0,0,0,0.8);
+    color: rgba(0,0,0,0.7);
 }
 
 #intro .elsewhere,
@@ -18,7 +18,8 @@
 
 #intro .elsewhere a,
 #intro .email span {
-    color: rgba(100,50,100,0.8);
+    color: rgba(0,0,0,0.85);
+/*    color: rgba(100,50,100,0.8); */
 
      -moz-transition: color 0.4s ease-out;  
        -o-transition: color 0.4s ease-out;  
@@ -28,7 +29,7 @@
 }
 
 #intro .elsewhere a:hover {
-    color: rgba(0,0,0,0.8);
+    color: rgba(100,50,100,0.8);
 }
 
 /*
