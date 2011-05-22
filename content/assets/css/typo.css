@@ -23,14 +23,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-  font-family: 'Pacifico';
+  font-family: 'Pacifico', sans-serif;
 }
 
 h3, h4 {
 }
 
 #intro p {
-  font-family: 'Rokkitt';
+  font-family: 'Rokkitt', sans-serif;
 }
 
 h1 {
