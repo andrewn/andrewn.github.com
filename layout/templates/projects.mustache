@@ -2,7 +2,7 @@
 <ul class="projects-list">
 
   {{#projects}}
-  <li class="{{categories}}">
+  <li class="{{^has_thumbnail?}}no-thumbnail{{/has_thumbnail?}} {{categories}}">
     <h3>{{name}}</h3>
     {{#has_thumbnail?}}
     <div class="thumbnail">

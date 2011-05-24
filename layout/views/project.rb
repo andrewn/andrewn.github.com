@@ -4,16 +4,16 @@ module AndrewNicolaou
     module Views
       class Project < Layout
         
-        attr_accessor :name, :description, :link, :slug, :has_thumbnail
+        attr_accessor :name, :description, :link, :slug, :has_thumbnail, :meta
         
         def initialize(content={})
-          p content
-          @name     = content["title"]
-          @tech     = content["tech"]
-          @description  = content["content"]
-          @link     = []
-          @slug     = content["slug"]
-          @has_thumbnail = content['thumbnail'].nil? ? true : content['thumbnail']
+          @name           = content["title"]
+          @tech           = content["tech"]
+          @description    = content["content"]
+          @link           = []
+          @slug           = content["slug"]
+          @has_thumbnail  = content['thumbnail'].nil? ? true : content['thumbnail']
+          #@meta           = content
 
           if content["link"]
             content["link"].each_with_index do |l,i|

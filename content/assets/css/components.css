@@ -86,6 +86,21 @@ section h1 {
     line-height: 28px;
 }
 
+#projects li h3,
+#projects li .thumbnail,
+#projects li .tech {
+    padding-left: 10px;
+}
+
+#projects .no-thumbnail a,
+#projects .no-thumbnail .summary p {
+    padding-left: 10px;
+}
+
+#projects .summary p {
+    padding-right: 10px;
+}
+
 #projects .tech {
     position: absolute;
     top: 137px;

@@ -10,7 +10,7 @@ module AndrewNicolaou
                     project_list.find_all { |p| p["published"] != false }
                   elsif state == :unpublished
                     project_list.find_all { |p| p["published"] == false }
-                  else # :all
+                  elsif state == :all
                     project_list
                   end
                 end
