@@ -1,11 +1,11 @@
 /*
     base.css
 */
-@import url('lib/reset-min.css');
-@import url('debug.css');
-@import url('layout.css');
-@import url('typo.css'); 
-@import url('components.css');
+@import url('lib/reset-min.css?v2');
+@import url('debug.css?v2');
+@import url('layout.css?v2');
+@import url('typo.css?v2'); 
+@import url('components.css?v2');
 
 /* Small screen devices */
-@import url('small.css') (max-device-width: 480px);
+@import url('small.css?v2') (max-device-width: 480px);
