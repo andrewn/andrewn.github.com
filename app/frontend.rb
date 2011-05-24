@@ -115,13 +115,13 @@ module AndrewNicolaou
     end
     
     get '/' do
-      settings.cache_max_age_override = 600
+      #settings.cache_max_age_override = 600
       @projects_list = AndrewNicolaou::Models::Project.find_all
       mustache :index
     end
   
     get '/all' do
-      settings.cache_max_age_override = 600
+      #settings.cache_max_age_override = 600
       @projects_list = AndrewNicolaou::Models::Project.find_all(:all).find_all do |project|
         project['scope'] != 'deprecated'
       end
