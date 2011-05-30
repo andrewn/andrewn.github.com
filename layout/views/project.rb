@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/../../models/file_store.rb'
-require 'active_support'
 module AndrewNicolaou
   class Frontend
     module Views
