@@ -117,7 +117,7 @@ a {
 }
 
 #projects .tech span {
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 #projects .thumbnail {
@@ -146,6 +146,14 @@ a {
       -ms-transition: color 0.2s ease-out;  
           transition: color 0.2s ease-out;  
     color: rgba(0, 153, 204, 1);;
+}
+
+#projects li .when {
+    padding-top: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: #AAA;
 }
 
 /*

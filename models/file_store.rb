@@ -85,7 +85,7 @@ module AndrewNicolaou
           :year   => $1,
           :month  => $2,
           :date   => $3,
-          :date_object => Date.civil( $1.to_i, $2.to_i, $3.to_i ),
+          :date_object => DateTime.civil( $1.to_i, $2.to_i, $3.to_i ),
           :slug   => $4          
         }
       end
@@ -97,7 +97,7 @@ module AndrewNicolaou
           :year   => $1,
           :month  => $2,
           :date   => $3,
-          :date_object => Date.civil( $1.to_i, $2.to_i, $3.to_i ),
+          :date_object => DateTime.civil( $1.to_i, $2.to_i, $3.to_i ),
           :slug   => $4,
           :format => $5,
           :title  => $4.gsub('-', ' ')
