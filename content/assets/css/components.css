@@ -64,7 +64,7 @@ a {
 #projects ul li {
     position: relative;
     width: 308px;
-    min-height: 188px;
+    min-height: 210px;
     float: left;
     margin-right: 10px;
     border: 1px solid transparent;
@@ -101,6 +101,10 @@ a {
     padding-left: 10px;
 }
 
+#projects li.no-thumbnail .tech {
+    width: 100%;
+}
+
 #projects .summary p {
     padding-right: 10px;
 }
@@ -126,6 +130,22 @@ a {
     border: 1px solid rgba(0,0,0,0.1);
     background-color: #FFF;
     padding: 5px;
+}
+
+#projects li .links {
+    padding-top: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 182px;
+}
+
+#projects li .links a:hover {
+     -moz-transition: color 0.2s ease-out;  
+       -o-transition: color 0.2s ease-out;  
+  -webkit-transition: color 0.2s ease-out;  
+      -ms-transition: color 0.2s ease-out;  
+          transition: color 0.2s ease-out;  
+    color: rgba(0, 153, 204, 1);;
 }
 
 /*
