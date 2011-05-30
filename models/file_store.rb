@@ -16,20 +16,16 @@ module AndrewNicolaou
       def list(opts={})
         file_contents = file_list
 
-        if opts["order_by_latest"]
-          file_contents.sort! do |a,b| 
-            date_a = a['date']
-            date_b = b['date']
-
-            return unless date_a and date_b
-          
-            begin
-              date_b <=> date_a
-            rescue
-              # Do nothing
-            end
+        # Sort in ascending chrono order
+        file_contents.sort! do |a,b|
+           begin
+            a['date'] <=> b['date']
+          rescue
+            # Do nothing
           end
-        end
+        end         
+
+        file_contents.reverse! if opts["order_by_latest"]
 
         file_contents
       end
