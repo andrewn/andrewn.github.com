@@ -136,7 +136,7 @@ a {
     padding-top: 5px;
     position: absolute;
     bottom: 5px;
-    left: 182px;
+    right: 5px;
 }
 
 #projects li .links a:hover {
