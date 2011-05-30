@@ -86,6 +86,9 @@ module AndrewNicolaou
 
       # set domain of incoming request
       @host = "#{request.scheme}://#{request.host_with_port}"
+
+      @app_version = settings.app_version
+      @cachebuster = "v#{@app_version}"
     end
 
     
@@ -111,7 +114,7 @@ module AndrewNicolaou
     ##
     
     get '/up' do
-      "up"
+      "up (v#{@app_version})"
     end
     
     get '/' do
@@ -126,6 +129,13 @@ module AndrewNicolaou
         project['scope'] != 'deprecated'
       end
       mustache :index
+    end
+
+    get '/assets/css/base.css' do
+      @app_version = 'v' + @app_version
+
+      content_type :css
+      mustache :css_base, :layout => false
     end
 
     #get '/about' do 
