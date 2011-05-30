@@ -1,14 +1,14 @@
 ---
 
 title: My BBC Location
-tech: [ Javascript, standards ]
+tech: [ Javascript, standards, API integration ]
 link: [ 'BBC News personalisation panel', 'http://www.bbc.co.uk/news/#geographic-news-digests', 
         'BBC Weather', 'http://www.bbc.co.uk/weather' ]
 published: false
 
 ---
 
-A shared location preference on th BBC News and Weather sites.
+Enabling BBC News and Weather users to set a shared location setting.
 
 My BBC Location is a standard for sharing a site visitor's location preference to offer geographic information that's relevant to them. 
 
