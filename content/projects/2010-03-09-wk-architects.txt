@@ -1,7 +1,7 @@
 ---
 
 title: Wilkinson King Architects
-link: [ "Wilkinson King Architects", "http://www.wilkinsonking.com/" ]
+link: [ "View the site", "http://www.wilkinsonking.com/" ]
 tech: [ HTML, CSS, Javascript, Ruby ]
 
 ---
