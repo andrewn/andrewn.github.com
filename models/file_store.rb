@@ -17,10 +17,18 @@ module AndrewNicolaou
         file_contents = file_list
 
         if opts["order_by_latest"]
-          file_contents.reverse!
-          # file_contents = file_contents.sort { |a,b| 
-          #    a["date"] <=> b["date"]
-          # }
+          file_contents.sort! do |a,b| 
+            date_a = a['date']
+            date_b = b['date']
+
+            return unless date_a and date_b
+          
+            begin
+              date_b <=> date_a
+            rescue
+              # Do nothing
+            end
+          end
         end
 
         file_contents
