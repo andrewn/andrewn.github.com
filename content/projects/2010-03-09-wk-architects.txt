@@ -2,11 +2,11 @@
 
 title: Wilkinson King Architects
 link: [ "View the site", "http://www.wilkinsonking.com/" ]
-tech: [ HTML, CSS, Javascript, Ruby ]
+tech: [ HTML, CSS, Javascript, Dojo, Ruby ]
 
 ---
 
-Built a new, standards-based website for this architect's practice.
+Built a standards-based website with UI flourishes for this architect's practice.
 
 The practice had an existing clean, minimal design but the site markup made updating the site with new projects a burden.
 

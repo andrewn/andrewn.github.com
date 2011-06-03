@@ -1,13 +1,13 @@
 ---
 
 title: BBC Weather Maps
-tech: [ Javascript, PHP, geo ]
+tech: [ Javascript, PHP, Open Layers ]
 link: [ "View the map", "http://news.bbc.co.uk/weather/forecast/8?fib=ForecastMap" ]
 published: false
 
 ---
 
-New maps using tile-based, user-centered time-based forecast maps.
+New user-centered, time-based forecast maps.
 
 Lead developer on a project to reinvent the way maps are presented. The previous map offering was flash-based and utilised fixed views for each area.
 

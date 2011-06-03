@@ -8,4 +8,4 @@ thumbnail: false
 
 ---
 
-Port of the FirePHP logging add-on as a Chrome extension.
+Port of the Firefox FirePHP logging add-on as a Chrome extension.
