@@ -120,6 +120,19 @@ a {
     padding-left: 10px;
 }
 
+#projects li .tech .comma {
+    position: absolute;
+    left: -99999px;
+}
+
+#projects li .tech span {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0 4px;
+    margin-bottom: 5px;
+}
+
 #projects .no-thumbnail a,
 #projects .no-thumbnail .summary p {
     padding-left: 10px;
@@ -141,11 +154,7 @@ a {
     position: absolute;
     top: 137px;
     left: 0;
-    width: 150px;
-}
-
-#projects .tech span {
-    /* white-space: nowrap; */
+    width: 180px;
 }
 
 #projects .thumbnail {

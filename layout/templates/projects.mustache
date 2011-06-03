@@ -12,7 +12,7 @@
     {{/has_thumbnail?}}
     <p class="tech">
       {{#tech}}
-        {{^last?}}<span>{{item}}</span>, {{/last?}}
+        {{^last?}}<span>{{item}}</span><span class="comma">, </span>{{/last?}}
         {{#last?}}<span>{{item}}</span>{{/last?}}
       {{/tech}}
     </p>
