@@ -127,6 +127,12 @@ module AndrewNicolaou
       @page_id  = "cv"
       mustache :cv
     end
+
+    get '/cv/extended' do
+      @extended = true
+      @page_id  = "cv"
+      mustache :cv
+    end
   
     get '/all' do
       @show_intro    = false

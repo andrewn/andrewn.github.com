@@ -5,6 +5,10 @@ module AndrewNicolaou
         def logo_colour
           "black"
         end
+
+        def extended?
+            @extended.nil? ? false : @extended
+        end
       end
     end
   end
