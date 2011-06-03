@@ -23,6 +23,14 @@ module AndrewNicolaou
           nil
         end
 
+        def show_intro
+          @show_intro.nil? ? true : @show_intro
+        end
+
+        def project_scope
+          @project_scope.nil? "Recent" : @project_scope
+        end
+
         def page_title
           title.nil? ? "Andrew Nicolaou" : title
         end

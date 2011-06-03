@@ -72,3 +72,8 @@ ul li {
 ol li {
   line-height: 1.667em;
 }
+
+.hide {
+  position: absolute;
+  left: -9999px;
+}

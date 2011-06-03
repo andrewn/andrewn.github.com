@@ -202,3 +202,115 @@ a {
 .section h5 {
     clear: right;
 }
+
+/**
+    CV page
+*/
+
+#cv {
+    padding: 0 40px;
+}
+
+#cv #masthead {
+    background-color: #FFF;
+    height: 92px;
+}
+
+#cv #masthead #logo {
+    margin-left: 0;
+}
+
+#cv h1, #cv h2, #cv h3 {
+    /* font-family: 'Rokkitt', sans-serif; */
+    font-family: 'Puritan', sans-serif;
+}
+
+#cv section ul {
+    margin-left: 15px;
+}
+
+#cv section ul li {
+    padding-bottom: 2px;
+    list-style-position: outside;
+}
+
+#cv section p {
+    line-height: 1.2em;
+}
+
+#cv section h3 + p {
+    font-size: 14px;
+}
+
+#cv section .education h3 + p {
+    font-size: 12px;
+}
+
+#cv section h3 + p,
+#cv section p + p {
+    margin-top: 5px;
+}
+
+#cv h2 {
+    padding-top: 10px;
+    padding-bottom: 0;
+    position:relative;
+}
+
+#cv h2 + h3 {
+     border-top: 1px solid #AAA;
+     margin-top: 5px;
+}
+
+#cv h3 {
+    border-top: 1px solid #DDD;
+    margin-top: 16px;
+    padding-top: 16px;
+    position:relative;
+}
+
+#cv h3 .date {
+    position:absolute;
+    right: 0;
+}
+
+#cv h3 .role,
+#cv h3 .role + span,
+#cv h3 .org {
+    display:inline;
+    position: static;
+}
+
+#cv h4 {
+    font-size: 14px;
+     padding-top: 10px;
+}
+
+#cv {
+    position: relative;
+}
+
+#cv section h1 {
+    position: absolute;
+    left: 141px;
+    top: 30px;
+    color: #000;
+}
+
+#cv section h1 .name {
+    position: absolute;
+    left: -999999px;
+}
+#cv section .details {
+    position: absolute;
+    right: 39px;
+    top: 18px;
+    color: #000; 
+    width: 170px;  
+}
+#cv section .details .code {
+    font-weight: bold;
+    position: absolute;
+    width: 260px;
+    right: 0;
+}

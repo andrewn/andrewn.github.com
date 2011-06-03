@@ -122,8 +122,15 @@ module AndrewNicolaou
       @projects_list = AndrewNicolaou::Models::Project.find_all
       mustache :index
     end
+
+    get '/cv' do
+      @page_id  = "cv"
+      mustache :cv
+    end
   
     get '/all' do
+      @show_intro    = false
+      @project_scope = "All"
       #settings.cache_max_age_override = 600
       @projects_list = AndrewNicolaou::Models::Project.find_all(:all).find_all do |project|
         project['scope'] != 'deprecated'
