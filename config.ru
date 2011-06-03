@@ -3,5 +3,5 @@
 require 'services'
 require 'app/frontend'
 
-AndrewNicolaou::Frontend.set :app_version, "2.3"
+AndrewNicolaou::Frontend.set :app_version, "2.4"
 run AndrewNicolaou::Frontend

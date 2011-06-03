@@ -246,6 +246,7 @@ a {
 
 #cv {
     padding: 0 40px;
+    min-width: 700px;
 }
 
 #cv #masthead {
