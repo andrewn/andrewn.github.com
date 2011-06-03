@@ -65,6 +65,14 @@ a {
     margin-top: 10px;
 }
 
+#projects h3 a {
+    text-decoration: none;
+}
+
+#projects h3 a:hover {
+    text-decoration: underline;
+}
+
 #intro h1,
 #projects h1 {
     font-size: 2em;
