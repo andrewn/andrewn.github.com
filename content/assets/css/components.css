@@ -57,6 +57,22 @@ a {
 /*
     Recent Projects
 */
+#intro h1 {
+    margin-top: 15px;
+}
+
+#projects h1 {
+    margin-top: 10px;
+}
+
+#intro h1,
+#projects h1 {
+    font-size: 2em;
+    border-bottom: 1px solid #AAA;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
 .debug #projects ul li {
     border: 1px solid green;
 }
