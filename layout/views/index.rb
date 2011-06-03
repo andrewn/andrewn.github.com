@@ -28,7 +28,7 @@ module AndrewNicolaou
         end
 
         def project_scope
-          @project_scope.nil? "Recent" : @project_scope
+          @project_scope.nil? ? "Recent" : @project_scope
         end
 
         def page_title
