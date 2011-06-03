@@ -125,6 +125,10 @@ a {
     padding-left: 10px;
 }
 
+#projects .no-thumbnail h3 a {
+    padding-left: 0;
+}
+
 #projects li.no-thumbnail .tech {
     width: 100%;
 }
