@@ -26,6 +26,13 @@ module AndrewNicolaou
           end
         end
 
+        def main_link
+          {
+            :url => @link.first['url'],
+            :name => @name
+          }
+        end
+
         def tech
           items = []
           last_index = @tech.length - 1
