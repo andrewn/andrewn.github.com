@@ -77,12 +77,12 @@ module AndrewNicolaou
     # http://geminstallthat.wordpress.com/2009/04/22/sinatra-utf-8-content-type-before-filter/
     CONTENT_TYPES = {:html => 'text/html', :css => 'text/css', :js  => 'application/javascript'}
     before do
-      request_uri = case request.env['REQUEST_URI']
-        when /\.css$/ : :css
-        when /\.js$/  : :js
-        else          :html
-      end
-      content_type CONTENT_TYPES[request_uri], :charset => 'utf-8'
+      #request_uri = case request.env['REQUEST_URI']
+      #  when /\.css$/ : :css
+      #  when /\.js$/  : :js
+      #  else          :html
+      #end
+      #content_type CONTENT_TYPES[request_uri], :charset => 'UTF-8'
 
       # set domain of incoming request
       @host = "#{request.scheme}://#{request.host_with_port}"
@@ -101,13 +101,13 @@ module AndrewNicolaou
     
     # Add /index.html extension to
     # all URLs in /blog
-    gem 'rack-rewrite', '~> 1.0.0'
-    require 'rack/rewrite'
-    use Rack::Rewrite do
-      send_file /\/post\/image\/(.*)/,    'content/posts/images/$1'
-      rewrite 	/(\/posts\/(.*))[^\/.]?/, '$1/index.html'
-      r302   /\/openid(.*)/, '/'
-    end
+    #gem 'rack-rewrite', '~> 1.0.0'
+    #require 'rack/rewrite'
+    #use Rack::Rewrite do
+    #  send_file /\/post\/image\/(.*)/,    'content/posts/images/$1'
+    #  rewrite 	/(\/posts\/(.*))[^\/.]?/, '$1/index.html'
+    #  r302   /\/openid(.*)/, '/'
+    #end
 
     ##
     ## ROUTES
