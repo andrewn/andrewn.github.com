@@ -74,7 +74,8 @@ a {
 }
 
 #intro h1,
-#projects h1 {
+#projects h1,
+#code h1 {
     font-size: 2em;
     border-bottom: 1px solid #AAA;
     margin-bottom: 10px;
@@ -351,4 +352,9 @@ a {
     position: absolute;
     width: 260px;
     right: 0;
+}
+
+#code h1,
+#code h2 {
+    margin-top: 12px;
 }

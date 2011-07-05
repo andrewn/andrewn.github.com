@@ -128,6 +128,11 @@ module AndrewNicolaou
       mustache :cv
     end
 
+    get '/code' do
+      @page_id  = "code"
+      mustache :code
+    end
+
     get '/cv/extended' do
       @extended = true
       @page_id  = "cv"
