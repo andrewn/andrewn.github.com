@@ -1,9 +1,13 @@
+<h1>Books</h1>
 <ul class="books section">
 {{#books}}
   <li>
-    <h3><a href="{{link}}">{{{title}}}</a></h3>
+    <h3>{{{title}}}</h3>
     <h4>&mdash;{{{author}}}</h4>
+    <time datetime="{{date}}">{{human_date}}</time>
+    {{#cover?}}
     <img src="{{cover}}" />
+    {{/cover?}}
   </li>
 {{/books}}
 </ul>

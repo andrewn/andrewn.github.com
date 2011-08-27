@@ -170,6 +170,25 @@ module AndrewNicolaou
     #  mustache :page
     #end
 
+    get '/books' do 
+       # Get book data
+      data = YAML::load( File.open( 'content/books/books.yaml' ) )
+      @book_data = data["books"]
+ 
+      @books = []
+      @book_data.each do | b | 
+        book = AndrewNicolaou::Models::Book.find_by_isbn( b['isbn'] )
+        book[:cover?]     = book[:cover].empty? ? nil : book[:cover]
+        book[:date]       = b['date'] + 'T00:00'
+        book[:human_date] = Date.parse(b['date']).strftime("%B %Y")
+        @books.push book
+      end.compact!
+      
+      @title= "Books read"
+      
+      mustache :book     
+    end
+
     #get '/books/:year/:month' do
     #  month = params[:month]
     #  year  = params[:year].to_i
