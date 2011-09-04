@@ -151,12 +151,11 @@ module AndrewNicolaou
       mustache :index
     end
 
-    # TODO: [R 301] -> /projects/all
     get '/posts' do
       @show_intro = false
-      @posts = AndrewNicolaou::Models::Post.find_all
-      puts "Found #{@posts.length} posts"
-      p @posts
+      @post_list = AndrewNicolaou::Models::Post.find_all
+      puts "Found #{@post_list.length} posts"
+      p @post_list
       mustache :post_list
     end
 

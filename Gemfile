@@ -10,3 +10,4 @@ gem 'json'
 gem 'htmlentities'
 gem 'unicode'
 gem 'sinatra-reloader', :group => :development
+gem 'heroku', :group => :development

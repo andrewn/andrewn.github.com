@@ -9,8 +9,8 @@ module AndrewNicolaou
             puts "Initializing PostList"
           end
           def posts
-            puts "PostList #{@posts.length}"
-            @posts.map do |post|
+            puts "PostList #{@post_list.length}"
+            @post_list.map do |post|
               puts "List #{post}"
               Post.new(post)
             end
