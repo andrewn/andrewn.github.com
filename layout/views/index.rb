@@ -1,3 +1,4 @@
+require 'layout/views/project'
 module AndrewNicolaou
   class Frontend
     module Views      

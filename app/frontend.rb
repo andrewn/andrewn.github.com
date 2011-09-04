@@ -21,23 +21,16 @@ module AndrewNicolaou
     # Templating
     require 'mustache/sinatra'
     register Mustache::Sinatra
-    
+    require 'layout/views/layout'
+    set :mustache, {
+      :views     => 'layout/views',
+      :templates => 'layout/templates/'
+    }
+        
     require 'rack/bug'
     use Rack::Bug
     require 'rack/bug/panels/mustache_panel'
     use Rack::Bug::MustachePanel
-    
-    # Views
-    require 'layout/views/layout'
-    require 'layout/views/post'
-    require 'layout/views/post_list'
-    require 'layout/views/project'
-
-    #require 'layout/helpers/helpers'
-    set :mustache, {
-      :views     => 'layout/views/',
-      :templates => 'layout/templates/'
-    }
     
     # Models
     require 'models/book.rb'
