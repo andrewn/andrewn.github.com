@@ -58,12 +58,15 @@ module AndrewNicolaou
     ## once (per deploy) by Sinatra, and then by Varnish after that
     unless development?
       after do
-        unless ENV['DISABLE_CACHING']
-          cache_max_age = settings.cache_max_age
-          if settings.cache_max_age_override
-            cache_max_age = settings.cache_max_age_override
-            settings.cache_max_age_override = nil
-          end
+        cache_max_age = settings.cache_max_age
+        if settings.cache_max_age_override
+          cache_max_age = settings.cache_max_age_override
+          settings.cache_max_age_override = nil
+        end
+
+        if ENV['DISABLE_CACHING'] == "true"
+          puts "Skipping caching"
+        else
           response.headers['Cache-Control'] = "public, max-age=#{cache_max_age}" # 1 year
         end
       end
