@@ -4,6 +4,8 @@ module AndrewNicolaou
       class Post < Layout
           def initialize(content={})
             @content = content
+            puts "Initialize new Post"
+            p @content
           end
           def date
             d = @content["date"] || @post["date"]
