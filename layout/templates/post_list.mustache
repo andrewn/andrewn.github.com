@@ -1,14 +1,12 @@
-{{#posts}}
 <div id="post-list">
   <h2>Recent posts</h2>
   <ul class="section">
-      {{#list}}
+      {{#posts}}
       <li>
         <a class="url" href="{{ url }}">
-            <span class="date">{{ user_friendly_date }}</span> {{ title }}
+            <time datetime="{{ machine_short_date }}">{{ short_date }}</time> {{ title }}
         </a>
       </li>
-      {{/list}}
+      {{/posts}}
   </ul>
 </div>
-{{/posts}}

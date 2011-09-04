@@ -42,6 +42,7 @@ module AndrewNicolaou
     require 'models/book.rb'
     require 'models/file_store.rb'
     require 'models/project.rb'
+    require 'models/post.rb'
     
     # Development
     require "sinatra/reloader" if development?
@@ -139,6 +140,7 @@ module AndrewNicolaou
       mustache :cv
     end
   
+    # TODO: [R 301] -> /projects/all
     get '/all' do
       @show_intro    = false
       @project_scope = "All"
@@ -147,6 +149,15 @@ module AndrewNicolaou
         project['scope'] != 'deprecated'
       end
       mustache :index
+    end
+
+    # TODO: [R 301] -> /projects/all
+    get '/posts' do
+      @show_intro = false
+      @posts = AndrewNicolaou::Models::Post.find_all
+ puts "Found #{@posts.length} posts"
+ p @posts
+      mustache :post_list
     end
 
     get '/assets/css/base.css' do
