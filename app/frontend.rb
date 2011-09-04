@@ -121,6 +121,7 @@ module AndrewNicolaou
     get '/' do
       #settings.cache_max_age_override = 600
       @projects_list = AndrewNicolaou::Models::Project.find_all
+      #@posts_list    = AndrewNicolaou::Models::Post.find_all
       mustache :index
     end
 

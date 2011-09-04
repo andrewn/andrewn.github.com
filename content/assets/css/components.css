@@ -53,6 +53,12 @@ a {
 #intro p.elsewhere, #intro p.elsewhere a { color: #09c; }
 */
 
+/* 
+    Homepage > posts 
+*/
+#home #content {
+   position: relative; 
+}
 
 /*
     Recent Projects

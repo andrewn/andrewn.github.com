@@ -47,10 +47,14 @@ module AndrewNicolaou
         end
         
         def posts
-          list = AndrewNicolaou::Frontend::Views::Post.new.list(:published => true)          
-          {
-            :list => list
-          }
+          return nil unless @posts_list
+          @posts_list.map do |post|
+            Post.new post
+          end
+        end
+
+        def page_id
+          "home"
         end
       end
     end

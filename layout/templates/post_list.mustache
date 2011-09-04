@@ -1,12 +1,10 @@
-<div id="post-list">
-  <h2>Recent posts</h2>
-  <ul class="section">
-      {{#posts}}
-      <li>
-        <a class="url" href="{{ url }}">
-            <time datetime="{{ machine_short_date }}">{{ short_date }}</time> {{ title }}
-        </a>
-      </li>
-      {{/posts}}
-  </ul>
-</div>
+<h1>Recent posts</h1>
+<ul class="section">
+    {{#posts}}
+    <li>
+      <a class="url" href="{{ url }}">
+          <time datetime="{{ machine_short_date }}">{{ short_date }}</time> {{ title }}
+      </a>
+    </li>
+    {{/posts}}
+</ul>
