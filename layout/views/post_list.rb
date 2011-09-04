@@ -1,4 +1,4 @@
-require 'layout/views/post'
+require 'post'
 puts "File path " + File.dirname(__FILE__)
 puts "Loading static postlist class"
 module AndrewNicolaou
