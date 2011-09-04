@@ -7,4 +7,4 @@ title: My first post
 
 This is my first post. 
 
-Well, _that_ only too 5 years.
+Well, _that_ only took 5 years.
