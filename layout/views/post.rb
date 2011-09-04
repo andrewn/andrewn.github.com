@@ -7,7 +7,11 @@ module AndrewNicolaou
       class Post < Layout
           def initialize(content={})
             @content = content
-            @date    = @content["date"]
+          end
+          def date
+            d = @content["date"] || @post["date"]
+            puts "Date requested #{d}"
+            return d
           end
           def title
             @content['title'] || @post['title']
@@ -19,10 +23,10 @@ module AndrewNicolaou
             "/posts/#{@content['slug']}"
           end
           def short_date
-            @date.strftime("%a %d %b %Y")
+            date.strftime("%a %d %b %Y")
           end
           def machine_short_date
-            @date.strftime("%Y-%m-%d")
+            date.strftime("%Y-%m-%d")
           end
       end
     end
