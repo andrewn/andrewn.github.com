@@ -1,4 +1,4 @@
-require 'post'
+require  File.dirname(__FILE__) + '/post'
 puts "File path " + File.dirname(__FILE__)
 puts "Loading static postlist class"
 module AndrewNicolaou
