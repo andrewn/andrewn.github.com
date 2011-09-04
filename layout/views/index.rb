@@ -1,8 +1,9 @@
 require 'layout/views/project'
+require 'layout/views/post'
 module AndrewNicolaou
   class Frontend
     module Views      
-      class Index < Post
+      class Index < Layout
 
         HELLO = "Hello!"
 
