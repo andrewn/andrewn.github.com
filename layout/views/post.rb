@@ -1,6 +1,3 @@
-# TODO: Convert to use filestore
-require 'date'
-require 'yaml'
 module AndrewNicolaou
   class Frontend
     module Views
