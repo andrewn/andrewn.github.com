@@ -5,6 +5,7 @@ module AndrewNicolaou
       class PostList < Layout
           def posts
             @posts.map do |post|
+              puts "List #{post}"
               Post.new(post)
             end
           end
