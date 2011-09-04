@@ -5,6 +5,9 @@ module AndrewNicolaou
   class Frontend
     module Views      
       class PostList < Layout
+          def initialize 
+            puts "Initializing PostList"
+          end
           def posts
             puts "PostList #{@posts.length}"
             @posts.map do |post|
