@@ -12,6 +12,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     hpricot (0.8.4)
     htmlentities (4.3.0)
+    httpclient (2.2.1)
     json (1.5.1)
     launchy (2.0.5)
       addressable (~> 2.2.6)
@@ -52,6 +53,7 @@ DEPENDENCIES
   heroku
   hpricot
   htmlentities
+  httpclient
   json
   mustache
   rack-bug

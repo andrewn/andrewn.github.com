@@ -166,6 +166,17 @@ module AndrewNicolaou
       mustache :post
     end
 
+    require 'httpclient'
+    get '/someday' do
+      client = HTTPClient.new
+      list_url = "https://raw.github.com/gist/df5d50c14dffd6928001/d8a998998313a1e342f93236f351380bf9a8c2df/someday.md"
+      resp = client.get(list_url)
+      @post = {
+        'title'   => "Someday",
+        'content' => BlueCloth.new( resp.content ).to_html
+      }
+      mustache :post
+    end
 
     get '/assets/css/base.css' do
       @app_version = 'v' + @app_version
