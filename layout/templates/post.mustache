@@ -1,15 +1,5 @@
-{{#post_list}}
-  {{#published}}
-    <div>
-      <a href="{{url}}">{{title}}</a>
-    </div>
-  {{/published}}
-{{/post_list}}
+<h1>{{title}}</h1>
 
-{{{content}}}
-
-<ul class="more-info">
-{{#more}}
- <li><a href="{{url}}">{{title}}</a></li>
-{{/more}}
-</ul>
+<div class="content">
+    {{{content}}}
+</div>

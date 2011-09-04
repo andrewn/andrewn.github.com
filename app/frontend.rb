@@ -158,6 +158,14 @@ module AndrewNicolaou
       mustache :post_list
     end
 
+    get '/posts/:slug' do |slug|
+      @show_intro = false
+      @post = AndrewNicolaou::Models::Post.find_by_slug(slug)
+      halt 404 unless @post
+      mustache :post
+    end
+
+
     get '/assets/css/base.css' do
       @app_version = 'v' + @app_version
 

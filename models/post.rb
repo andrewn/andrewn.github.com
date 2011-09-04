@@ -14,6 +14,13 @@ module AndrewNicolaou
                     post_list
                   end
                 end
+
+                def self.find_by_slug(slug)
+                  file_store = AndrewNicolaou::Models::FileStore.new("content/posts")
+                  post_list = file_store.list("order_by_latest" => true).find do |post|
+                    post["slug"] === slug
+                  end
+                end                  
         end
     end
 end

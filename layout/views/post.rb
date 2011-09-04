@@ -10,7 +10,10 @@ module AndrewNicolaou
             @date    = @content["date"]
           end
           def title
-            @content['title']
+            @content['title'] || @post['title']
+          end
+          def content
+            @content['content'] || @post['content']
           end
           def url
             "/posts/#{@content['slug']}"
