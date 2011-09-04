@@ -30,6 +30,7 @@ module AndrewNicolaou
     # Views
     require 'layout/views/layout'
     require 'layout/views/post'
+    require 'layout/views/post_list'
     require 'layout/views/project'
 
     #require 'layout/helpers/helpers'
