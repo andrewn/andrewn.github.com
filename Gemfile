@@ -9,5 +9,4 @@ gem 'RedCloth'
 gem 'json'
 gem 'htmlentities'
 gem 'unicode'
-#gem 'rack-esi'
-#gem 'esi-for-rack'
+gem 'sinatra-reloader', :group => :development
