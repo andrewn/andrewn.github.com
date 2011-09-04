@@ -156,6 +156,8 @@ module AndrewNicolaou
     get '/posts' do
       @show_intro = false
       @posts = AndrewNicolaou::Models::Post.find_all
+      puts "Found #{@posts.length} posts"
+      p @posts
       mustache :post_list
     end
 
