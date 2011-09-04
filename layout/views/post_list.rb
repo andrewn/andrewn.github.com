@@ -1,4 +1,5 @@
 require 'layout/views/post'
+puts "Loading static postlist class"
 module AndrewNicolaou
   class Frontend
     module Views      
