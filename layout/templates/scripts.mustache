@@ -1,0 +1,16 @@
+<script src="/assets/js/lib/yepnope.js"></script>
+<script src="/assets/js/lib/almond.js"></script>
+
+<script>
+    yepnope([
+        {
+            test     : document.addEventListener && document.querySelector("#projects"),
+            yep      : "/assets/js/project-tray.js",
+            callback : function () {
+                require(['project-tray'], function (initProjectTray) {
+                    initProjectTray('#projects h1', '#projects', true);
+                });
+            } 
+        }
+    ])
+</script>

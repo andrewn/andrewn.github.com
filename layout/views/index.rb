@@ -55,6 +55,10 @@ module AndrewNicolaou
           end
         end
 
+        def has_posts?
+          posts.nil? ? false : true
+        end
+
         def page_id
           "home"
         end

@@ -97,12 +97,52 @@ a {
     border: 1px solid green;
 }
 
+#projects {
+    overflow: hidden;
+
+     -moz-transition: height 0.3s ease-out;  
+       -o-transition: height 0.3s ease-out;  
+  -webkit-transition: height 0.3s ease-out;  
+      -ms-transition: height 0.3s ease-out;  
+          transition: height 0.3s ease-out; 
+}
+
+#projects.is-closed {
+    height: 278px;
+}
+
+#projects h1 a {
+    display        : inline-block;
+    margin-left   : 1em;
+    font-size: 0.6em;
+    padding: 3px 5px;
+    text-align: center;
+    vertical-align : middle;
+    text-decoration: none;
+    color: #333;
+    background-color: #DDD;
+
+     -moz-transition: color, background-color 0.3s ease-out;  
+       -o-transition: color, background-color 0.3s ease-out;  
+  -webkit-transition: color, background-color 0.3s ease-out;  
+      -ms-transition: color, background-color 0.3s ease-out;  
+          transition: color, background-color 0.3s ease-out; 
+}
+
+#projects h1 a:hover {
+    color: #FFF;
+    background-color: rgba(0, 153, 204, 1);
+}
+
 #projects ul li {
+    display: inline-block;
     position: relative;
+    vertical-align:top;
+
     width: 308px;
     min-height: 210px;
-    float: left;
-    margin-right: 10px;
+
+    margin-right: 7px;
     border: 1px solid transparent;
     list-style: none;
     border-bottom: 2px solid rgba(0,0,0,0.1);
