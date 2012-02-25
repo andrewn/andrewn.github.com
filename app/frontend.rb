@@ -162,8 +162,7 @@ module AndrewNicolaou
     end
 
     get '/posts/:slug' do |slug|
-      @page_id = "post"
-      @show_intro = false
+      @page_id = "page-post"
       @post = AndrewNicolaou::Models::Post.find_by_slug(slug)
       halt 404 unless @post
       mustache :post

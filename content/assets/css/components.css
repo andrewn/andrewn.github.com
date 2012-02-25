@@ -102,6 +102,7 @@ a {
 
 #intro h1,
 #posts h1,
+#post h1,
 #projects h1,
 #code h1 {
     font-size: 2em;
@@ -451,7 +452,17 @@ a {
 }
 
 /* Posts */
+.post {
+    width: 60%;
+    font-size: 1.2em;
+}
 .post h1, .post h2, .post h3 {
     /* font-family: 'Rokkitt', sans-serif; */
     font-family: 'Puritan', sans-serif;
+}
+
+.post h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-top: 1em;
 }
