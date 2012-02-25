@@ -142,6 +142,7 @@ module AndrewNicolaou
   
     # TODO: [R 301] -> /projects/all
     get '/all' do
+      @page_id = "all"
       @show_intro    = false
       @project_scope = "All"
       #settings.cache_max_age_override = 600
@@ -152,6 +153,7 @@ module AndrewNicolaou
     end
 
     get '/posts' do
+      @page_id = "posts"
       @show_intro = false
       @post_list = AndrewNicolaou::Models::Post.find_all
       puts "Found #{@post_list.length} posts"
@@ -160,6 +162,7 @@ module AndrewNicolaou
     end
 
     get '/posts/:slug' do |slug|
+      @page_id = "post"
       @show_intro = false
       @post = AndrewNicolaou::Models::Post.find_by_slug(slug)
       halt 404 unless @post
