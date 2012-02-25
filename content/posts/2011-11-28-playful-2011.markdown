@@ -1,0 +1,54 @@
+---
+
+published: true
+title: Playful 2011
+
+---
+
+[Playful](http://www.thisisplayful.com/blog/) is a small one-day conference about how game design can affect all forms of media. The theme this year was "the shape of things to come" and each of the speakers put their own slant on this broad topic.
+
+## Where's the future we were promised?
+Toby Barnes - the conference organiser - started off by asking the divisive question "where are the _big things_ in the future we were promised"? Things like Death Stars. And jet packs. His question was rooted in the futuristic, optimistic architecture of the [Tricorn Centre](http://en.wikipedia.org/wiki/Tricorn_Centre) that he grew up with.
+
+This thread of either disappointment or wonder in the future that has happened ran throughout the day. Most speakers picked a side and from this, I noticed some cross-cutting themes emerging that I think apply to our work here, which I'll try and pull together in this post. 
+
+## Future fictions
+Fictions and sci-fi were heavily mentioned throughout the day, with Al Robertson giving a sweeping, funny survey of the difference between genres such as fantasy (it'll never happen), horror (you hope it'll never happen) and sci-fi (it could happen, and here's how). He explained that sci-fi's playfulness could imagine futures that come to pass, with a short anecdote about how the waterbed patent was initially rejected because [it had already been described in sci-fi](http://en.wikipedia.org/wiki/Stranger_in_a_Strange_Land) but that there's also value in the "meaningless playful".
+
+Naturally, sci-fi formed many of the reference points of the day, from [2001](http://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)) to [Star Wars](http://en.wikipedia.org/wiki/Star_Wars). Marcus Brown rallied against those that were disappointed in the future, arguing that what we had created was the "middle-aged future". We've built the peripheral devices promised by the sci-fi canon of the 70s instead of the interplanetery spaceships that are beyond our reach. This was a fascinating thought, as Marcus advocated moving "beyond the canon" and "thinking like a 3 year old" to imagine what forms new futures could take.
+
+Although on the day their views seemed opposed, I think that Toby and Marcus were both after something beyond the "mundane, near future" where we could all "make a dent in the world".
+
+<!--
+![](http://spyhunter007.com/Images/a_space_odyssey_discovery.gif)
+![](http://cimota.com/blog/wp-content/uploads/2010/04/Screen-shot-2010-04-29-at-22.37.05.png)
+-->
+
+## Making a dent in the world
+With speakers that were writers, makers and designers, it's no wonder that creating new things in the world was high on the agenda.
+
+Brendan Dawes focussed on the [physical things that he's making](http://everythingimakewithmymakerbot.com/) using a 3D printer in his house. Being able to create artefacts that solve problems was something he was visibly excited about. The fact that he downloads and shares these digital schematics hints that a future where we print our own household objects might not be too far off.
+
+As well as 3D printing, other platforms for making physical systems like [Tengu](http://www.tengutengutengu.com/), [Electric Bricks/Grove](http://www.seeedstudio.com/blog/2010/10/16/grove-starter-bundle-alpha-cant-live-without-a-logo/) and [LittleBits](http://littlebits.cc/) simplify the creation of interactive objects without having to write any code.
+
+## Prototyping experiences
+Beyond making physical artefacts there were several examples of creating spatial experiences on a personal, architectural or city-scale. 
+
+This leads to the question, how do you design and prototype these experiences? This is something we're also thinking about here as we try to move beyond paper prototypes.
+
+[Matt Ward](https://twitter.com/matthewward) of [DWFE](http://www.dwfe.org/) spoke about a physical installation called ["Green=Boom"](http://www.shopwork.net/events/dwfe-green-boom/) simulating the nerve-wracking scenes in action films. What I found most interesting was the process of prototyping the installation. It started with a lo-fi physical workshop using a balloon stuck to a subject and a person with a scalpel as the trigger for "cutting the wrong wire" then iteratively more complex eletronics, sensors and environments were introduced.
+
+[Matt Sheret](http://twitter.com/mattsheret) spoke about the manipulation of our perceptions via lenses onto the physical world. These could either be digital services such as Twitter/4square in "[Derby 2061](http://wearemudlark.com/derby/#more)" or [Tower Bridge speaking on twitter](https://twitter.com/twrbrdg_itself). It can also be something analogue like Warhammer where the "game master" mediates players' total experience of the fictional world.
+
+From a tech geekery point-of-view, there were also examples of devices projecting a digital landscape directly onto the physical world using (portable projectors attached to mobile devices)[http://www.youtube.com/watch?v=lRYXj2t8_Gs].
+
+## Toys and play
+[Emil Overmar](http://twitter.com/eovemar) ([Toca Boca](http://tocaboca.com/)) showed an interesting graphic about [five different types of play](http://media.tocaboca.com/2011/04/blog-illustration.001.jpg) and compared each type to the amount of apps available, which is overwhelmingly weighted towards "learning" on the right-hand of the diagram. Toca Boca creates toys that encourage play towards the left side of the diagram, rather than games found on the right side. Their design and build process focusses on rapid iterations to create and release toys in a matter of weeks, sometimes using old toy catalogues as a source of inspiration. Emil showed images of kids integrating their kitchen cooker app with all of their physical ones showing how comfotable they are with these new technologies.
+
+This integration of digital devices with traditional toys was elaborated by [Chris O'Shea](http://www.chrisoshea.org/blog/playful-2011) who argued that [kids don't need more stuff](http://www.bbc.co.uk/news/uk-14899148) but in fact can use their [their imaginations to transform cardboard boxes](http://vimeo.com/25239728) into anything they want. Chris showed some prototypes of a cardboard toy and app that allows kids to make something physical that turns into a racing car or a spaceship paired with an iPhone or iPod touch.
+
+## And more
+There was so much more to the day that was thought-provoking and so many links, projects and further reading. You can find more, and other people's takes on the day here:
+
+- [http://www.thisisplayful.com/blog/](http://www.thisisplayful.com/blog/)
+- [http://storify.com/huey/playful-2011](http://storify.com/huey/playful-2011)
