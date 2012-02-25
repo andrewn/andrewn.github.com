@@ -5,6 +5,12 @@
 </section>
 {{/show_intro}}
 
+{{#has_posts?}}
+<section id="posts">
+    {{> post_list}}
+</section>
+{{/has_posts?}}
+
 <section id="projects">
     {{> projects}}
 </section>
@@ -16,9 +22,3 @@
 <section id="education">
     {{! education}}
 </section>       
-
-{{#has_posts?}}
-<section id="posts">
-    {{> post_list}}
-</section>
-{{/has_posts?}}

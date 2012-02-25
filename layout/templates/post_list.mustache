@@ -1,10 +1,14 @@
 <h1>Recent posts</h1>
-<ul class="section">
+<ul class="section post-list">
     {{#posts}}
     <li>
-      <a class="url" href="{{ url }}">
-          <time datetime="{{ machine_short_date }}">{{ short_date }}</time> {{ title }}
-      </a>
+        <a class="url" href="{{ url }}">
+            <div class="meta">
+                <h2>{{ title }}</h2>
+                <time datetime="{{ machine_short_date }}">{{ short_date }}</time> 
+            </div>
+        </a>
+        <p>{{{summary}}}</p>
     </li>
     {{/posts}}
 </ul>

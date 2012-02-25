@@ -18,6 +18,12 @@ module AndrewNicolaou
           def content
             @content['content'] || @post['content']
           end
+          def summary
+            para = content.to_a[0]
+            para.gsub!(/(<a[^<]*>|<\/a>)/, '')
+            para.gsub!(/<\/?p>/, '')
+            para
+          end
           def url
             "/posts/#{@content['slug']}"
           end

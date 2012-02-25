@@ -65,6 +65,26 @@ a {
     clear: both;
 }
 
+#posts .post-list li {
+    list-style: none;
+}
+
+#posts .post-list a:hover {
+    background-color: #CCC;
+}
+
+#posts .post-list .meta {
+    float: left; 
+    width: 150px;
+    height: 50px;
+    text-align: right;
+    padding-right: 1em;
+}
+
+#posts .post-list p {
+    width: 70%;
+}
+
 /*
     Recent Projects
 */
@@ -73,7 +93,6 @@ a {
 }
 
 #projects h1 {
-    margin-top: 10px;
 }
 
 #projects h3 a {
@@ -85,9 +104,11 @@ a {
 }
 
 #intro h1,
+#posts h1,
 #projects h1,
 #code h1 {
     font-size: 2em;
+    margin-top: 10px;
     border-bottom: 1px solid #AAA;
     margin-bottom: 10px;
     padding-bottom: 10px;
