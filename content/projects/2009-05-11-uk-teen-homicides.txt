@@ -3,7 +3,7 @@
 title: Mapping the UK's teen murder toll
 tech: [ Flash, Perl, Template Toolkit, Modest Maps ]
 link: ["View the map", "http://news.bbc.co.uk/1/hi/uk/7780497.stm"]
-published: false
+published: true
 
 ---
 

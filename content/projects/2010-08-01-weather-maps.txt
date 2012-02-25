@@ -3,7 +3,7 @@
 title: BBC Weather Maps
 tech: [ Javascript, PHP, Open Layers ]
 link: [ "View the map", "http://news.bbc.co.uk/weather/forecast/8?fib=ForecastMap" ]
-published: false
+published: true
 
 ---
 

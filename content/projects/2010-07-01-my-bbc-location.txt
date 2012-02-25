@@ -4,7 +4,7 @@ title: My BBC Location
 tech: [ Javascript, standards, API integration ]
 link: [ 'BBC News', 'http://www.bbc.co.uk/news/#geographic-news-digests', 
         'BBC Weather', 'http://www.bbc.co.uk/weather' ]
-published: false
+published: true
 
 ---
 

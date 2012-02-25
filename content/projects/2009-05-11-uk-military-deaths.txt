@@ -4,7 +4,7 @@ title: UK military deaths in Afghanistan and Iraq
 tech: [ Flash, Perl, Template Toolkit ]
 link: ["View the map", "http://www.bbc.co.uk/news/uk-10634102"]
 scale: 5
-published: false
+published: true
 
 ---
 
