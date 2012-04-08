@@ -1,0 +1,10 @@
+---
+
+title: BBC Weather v4
+tech: [ Javascript, PHP, HTML5, CSS3 ]
+link: [ 'View', 'http://www.bbc.co.uk/weather/2643743' ]
+published: true
+
+---
+
+Front-end lead on the new BBC Weather site. A major redesign of one of the UK's leading weather websites.
