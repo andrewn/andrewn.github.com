@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title></title>
+    
+    <meta name="description" content="" />
+    <meta name="author" content="Andrew Nicolaou" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <!-- Syntax highlighting -->
+    <link href="lib/highlight/default.min.css" rel="stylesheet" />
+    <script src="lib/highlight/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    <link href="css/presentation.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<!--
+    
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+    
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+    
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+    
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    
+    Now that's the core element used by impress.js.
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+    
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+    
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+    
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesing things
+    right around the corner of this tag ;)
+    
+-->
+<div id="impress">
+
+    <div id="intro" class="step slide title" data-x="0000" data-y="0">
+       <div class="group">
+           <h1>FI-Content user dashboard</h1>
+           <h2>Interesting technologies</h2>
+       </div>
+    </div>
+
+    <div class="step slide" data-x="1000" data-y="0">
+        <h1>About the dashboard</h1>
+        <ul>
+            <li>part of a user study on attitudes to data collection and privacy
+            <li>visualise the programmes a participant watched during a diary study
+            <li>display on a tablet during a lab session
+            <li>show how the UI changes when new data arrives
+            <li>data rendering happens mostly on the client (using HTML/CSS/JS)
+        </ul>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="0">
+        <h1>About the dashboard</h1>
+        <div class="frame slide-up-slow">
+            <img class="" src="img/dashboard-charts.png" />
+        </div>
+    </div>
+
+    <div class="step slide" data-x="3000" data-y="0">
+        <h1>About the dashboard</h1>
+        <div class="frame">
+            <img src="img/dashboard-grid.png" />
+        </div>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="0">
+        <h1>Interesting areas of development</h1>
+        <ul>
+            <li>JavaScript modules &amp; dependencies
+            <li>visualisation &amp; updating
+            <li>binding data to views
+        </ul>
+        <p>Dan did a huge amount of data magic which isn't going to be covered <em class="sad">:-(</em></p>
+    </div>
+
+    <div id="modules" class="step slide title" data-x="5000" data-y="0">
+        <h1>JavaScript modules &amp; dependencies</h1>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="800">
+        <h1>Asynchronous Module Definition</h1>
+        <q>AMD specifies a mechanism for <em>defining modules</em> such that the <em>module and its dependencies</em> can be <em>asynchronously loaded</em>.</q>
+        <cite>&mdash;https://github.com/amdjs/amdjs-api/wiki/AMD</cite>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="1600">
+        <h1>AMD example: defining a module</h1>
+        <pre><code>// models/watched-programme.js
+define(
+    // dependencies
+    ['util/service-map', 'util/genres', 'util/bbc-image'],
+    function (ServiceMap, Genres, bbcImage) {
+        var WatchedProgramme = function (data) {
+            // Extract BBC services and genres 
+            this.serviceName  = ServiceMap.find(data.service).title;
+            var genres        = Genres.extract(data.categories);
+
+            // Image thumbnail url
+            this.image = bbcImage(data.pid)
+        };
+
+        return WatchedProgramme;
+    }
+);</code></pre>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="2400">
+        <h1>AMD example: using a module</h1>
+        <p>This uses the <code>curl.js</code> AMD loader:</p>
+        <pre><code>// js/app.js
+curl(['models/watched-programme']).then(
+    // when deps are loaded
+    function (WatchedProgramme) {
+        var prog = new WatchedProgramme(...);
+    }, 
+    // something went wrong
+    function (error) { 
+        throw error; 
+    }
+);</code></pre>
+    <cite>&mdash; https://github.com/cujojs/curl</cite>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="3200">
+        <h1>Benefits</h1>
+        <ul>
+            <li>organise and modularise code
+            <li>encapsulate your module: control what's visible to others and the API you expose
+            <li>don't pollute the global namespace
+            <li>will work with any loader that supports AMD
+                <span class="explanation">e.g. curl.js, require js, almond.js...</span>
+            <li>can post-load modules only when needed
+                <span class="explanation">although you can merge into single files for production</span>
+        </ul>
+        <cite>Good presentation: http://briancavalier.com/presentations/pgh-js-amd-10-2011</cite>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="4000">
+        <h1>Annoyances</h1>
+        Not all libraries are AMD-aware so you have to either (in order of difficulty):
+        <ul>
+            <li>top and tail the file in a <code>define</code> function call <em class="sad">:-(</em>
+            <li>get an AMD plugin to do this for you *
+            <li>create a wrapper shim to load it †
+            <li>convince libraries of the amazingness of AMD and add it to the project
+        </ul>
+        <cite>* https://github.com/tbranyen/use.js</cite>
+        <cite>† http://tbranyen.com/post/amdrequirejs-shim-plugin-for-loading-incompatible-javascript</cite>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="4800">
+        <h1>AMD support</h1>
+        <ul>
+            <li>jQuery
+            <li>knockout js
+            <li>Backbone *
+            <li>Underscore *
+        </ul>
+        <p>* an AMD compatible-mirror maintained by the AMD community: https://github.com/amdjs</p>
+    </div>
+
+    <div class="step slide title" data-x="5000" data-y="5600">
+        <h1>Visualisation</h1>
+    </div>
+
+    <div class="step slide" data-x="6000" data-y="5600">
+        <h1>Data Driven Documents (d3)</h1>
+        <ul>
+            <li>JavaScript data visualisation library
+            <li>Rendering engine agnostic (as long as it's DOM-based i.e. SVG, HTML)
+            <li>Provides a small core library for binding <em>data</em> to <em>DOM elements</em></p>
+            <li><em>Selections</em> of nodes allow you to manipulate the <em>DOM</em> to reflect the <em>data</em>
+            <li>This makes it easier to create visualisations that constantly update
+        </ul>
+        <cite>&mdash;http://mbostock.github.com/d3/</cite>
+    </div>
+
+    <div class="step slide" data-x="7000" data-y="5600">
+        <img src="img/enter-update-exit.jpg" />
+        <cite>&mdash;http://bost.ocks.org/mike/join/</cite>
+    </div>
+
+    <div class="step slide" data-x="8000" data-y="5600">
+        <h1>Imagine a bar chart</h1>
+        <div class="center">
+            <img src="img/d3-existing.png" />
+        </div>
+        <pre><code><svg>
+    <rect width="20" height="50" x="0"  y="50" />
+    <rect width="20" height="30" x="20" y="70" />
+</svg></code></pre>
+    </div>
+
+    <div class="step slide" data-x="9000" data-y="5600">
+        <h2>1. Get the selection of all bars</h2>
+        <pre><code>var rects = d3.select('svg').selectAll('rect');</code></pre>
+        <h2>2. Bind data to bars</h2>
+        <pre><code>rects.data([15, 20, 30]);</code></pre>
+    </div>
+
+    <div class="step slide" data-x="10000" data-y="5600">
+        <h2>3. 'Enter' selection</h2>
+        <pre><code>rects.enter()
+       .append('rect')
+       .attr('x', function(d, i) { return x(i); })
+       .attr('y', function(d) { return height - y(d.value); })
+       .attr('width', 20)
+       .attr('height', function(d) { return y(d.value); });</code></pre>
+
+        <div class="center">
+            <img src="img/d3-enter.png" />
+        </div>
+    </div>
+
+    <div class="step slide" data-x="11000" data-y="5600">
+       <h2>4. Update selection for existing elements</h2>
+        <pre><code>rects.attr('height', function(d) { return y(d.value); });</code></pre>
+
+        <div class="center">
+            <img src="img/d3-update.png" />
+        </div>
+    </div>
+
+    <div class="step slide" data-x="12000" data-y="5600">
+        <h2>5. Remove DOM elements</h2>
+        <pre><code>rects.exit().remove();</code></pre>
+
+        <cite>Great tutorial: http://mbostock.github.com/d3/tutorial/circle.html</cite>
+    </div>
+
+    <div class="step slide" data-x="13000" data-y="5600">
+        <h1>Pros/cons</h1>
+        <ul>
+            <li class="pro">Lots of control
+            <li class="con">Steep learning curve 
+                <span class="explanation">you need to understand the rendering technology (DOM+CSS, SVG) and how to build your visualisation</span> 
+            <li class="pro">Loads of great examples of common/not-so-common visualisation to copy &amp; tweak
+                <span class="explanation">e.g. 65 examples in the d3 repo</span>
+            <li class="pro">Heaps of detailed API docs
+            <li class="pro">Lots of helpers for: layouts (e.g. pie chart, force directed), scales, colour ranges, transitions
+                <!--<span class="explanation">Interesting use of functions and props</span>-->
+            <li class="both">Method chaining style can make things messy if you're not careful
+        </ul>
+    </div>
+
+    <div class="step slide title" data-x="15000" data-y="5600">
+        <h1>Data binding &amp; views</h1>
+    </div>
+
+    <div class="step slide" data-x="15000" data-y="6400">
+        <h1>Requirement</h1>
+        <p>Once a view had been rendered, we needed to simulate adding another programme to the participants watched list and see everything update</p>
+    </div>
+
+    <div class="step slide" data-x="15000" data-y="7200">
+        <img style="border-radius:10px; padding:10px; background-color:rgb(224,58,25);" src="img/ko-logo.png" />
+        <ul>
+            <li>JavaScript library
+            <li>dynamically <em>bind data</em> to <em>templates</em> written in HTML
+            <li><em>view model</em> object maps data to templates
+            <li>changing data in view model <em>updates</em> all templates (and vice versa)
+        </ul>
+    </div>  
+
+    <div class="step slide" data-x="15000" data-y="8000">
+        <h2>Template</h2>
+        <pre><code style="font-size: 0.8em"><section class="totals">
+    <h2>
+        Total hours: <span data-bind="text: durationInHours">--</span>
+    </h2>
+    <div data-bind="with: durationBreakdown">
+        <p>As broadcast: 
+            <span data-bind="percentage: broadcast / total">--%</span>
+        </p>
+        <p>After broadcast: 
+            <span data-bind="percentage: catchup / total">--%</span>
+        </p>
+    </div>
+</section></code></pre>
+    </div>
+
+     <div class="step slide" data-x="15000" data-y="8800">
+        <h2>View model</h2>
+        <pre><code>...
+// A list of programmes the user's watched
+this.watched = ko.observableArray();
+
+this.duration = ko.computed(function () {
+    return this.watched().reduce( function (previousValue, currentItem) {
+            var duration = currentItem.duration ? currentItem.duration : 0;
+            return previousValue + duration;
+        }, 0 );
+}, this);
+
+this.durationInHours = ko.computed(function () {
+    var secs = this.duration();
+    var hours = this.secsAsHours(secs);
+    return hours.toFixed(1);
+}, this);
+...</code></pre>
+    </div>
+
+    <div class="step slide" data-x="15000" data-y="9600">
+        <h1>Custom data bindings</h1>
+        <pre><code>
+define(['knockout'], function (ko) {
+    ko.bindingHandlers.percentage = {
+        update: function(element, valueAccessor, allBindingsAccessor) {
+   
+            // First get the latest data that we're bound to
+            var value = valueAccessor();
+
+            // Next, whether or not the supplied model property is observable, get its current value
+            var valueUnwrapped = ko.utils.unwrapObservable(value); 
+
+            element.textContent = Math.floor(valueUnwrapped * 100) + '%';
+        }
+    };
+});
+        </code></pre>
+    </div>
+
+    <div class="step slide" data-x="15000" data-y="10400">
+        <h1>Extend to complex things</h1>
+        <pre><code>
+define([
+    "knockout",
+    "charts/bar-chart-simple"
+    ], function (ko, BarChart) {
+
+    ko.bindingHandlers.barchart = {
+        init: function(element, valueAccessor, allBindingsAccessor, viewModel) {
+            var yAxisLabel = allBindingsAccessor().yAxisLabel,
+                chart = new BarChart(element, { yAxisLabel:yAxisLabel });            
+            element.chart = chart;
+            chart.init();
+        },
+        update: function(element, valueAccessor, allBindingsAccessor) {
+            var chart = element.chart;
+            var data = ko.utils.unwrapObservable(valueAccessor());
+            chart.update(data);
+        }
+    };
+
+});
+        </code></pre>
+    </div>
+
+    <div class="step slide" data-x="15000" data-y="11200">
+        <h1>Live updating</h1>
+        <p>knockout doesn't care about where the data comes from so we mixed and matched: using <em>xhr</em> to load the initial list of watched programmes and then <em>Faye</em> to push individual programmes over a websocket.
+        <p>Updating the entire UI is as simple as:
+        <pre><code>var anotherProg = new WatchedProgramme(data); 
+viewModel.watched.push(anotherProg);</pre></code>
+    </div>
+
+    <div class="step slide" data-x="15000" data-y="12000">
+        <h1>Pros/cons</h1>
+        <ul>
+            <li class="pro">Good for knocking out quick, reactive prototypes
+            <li class="con">Lack of structure for constructing a whole app
+                <span class="explanation">Knockout + Backbone = KnockBack
+            <li class="pro">Promotes reusable page widgets through bindings
+    </div>
+
+    <div class="step slide title-small" data-x="15000" data-y="12800">
+        <h1>A summary</h1>
+        <ul>
+            <li>AMD is good for structuring javascript into modules
+            <li>How do we share across projects (look at "volo")?
+        
+            <li>d3 is very flexible but needs modules to wrap common types e.g. pie chart etc
+            <li>perfect for visualisations that update in response to data
+            <li>and for creating novel visualisations
+
+            <li>knockout is great for data binding
+            <li>feels right to specify data in HTML rather than template
+            <li>less boilerplate for views code
+            <li>reusable widgets via bindings
+    </div>  
+
+    <!-- Entity escape all code blocks -->
+    <script>
+        var codes = document.querySelectorAll('code');
+        [].forEach.call(codes, function (code, index) {
+            var content = code.innerHTML;
+            code.textContent = code.innerHTML;
+        });
+    </script>
+
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to the API that controls the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>

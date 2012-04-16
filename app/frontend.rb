@@ -139,7 +139,18 @@ module AndrewNicolaou
       @page_id  = "cv"
       mustache :cv
     end
+
+    get '/presentations/:presentation' do 
+      redirect "/presentations/#{params[:presentation]}/"
+    end
   
+    get '/presentations/:presentation/' do 
+      presentation_name  = params[:presentation]
+      presentations_path = File.join( settings.public, 'presentations', presentation_name )
+      index_file         = File.join( presentations_path, 'index.html' )
+      File.read( index_file )
+    end
+
     # TODO: [R 301] -> /projects/all
     get '/all' do
       @page_id = "all"
