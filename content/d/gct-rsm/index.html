@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RSM Examples</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <style type="text/css">
+            #ex2 form { 
+                float: left;
+                padding: 0 10px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="">
+                <h1>RSM option examples</h1>
+                <p>For the purposes of this demo, please pretend that this is a page on the GCT website</p>
+                <p>This shows some options for how you direct a user from the GCT site to the RSM direct debit madate form.</p>
+            </div>
+
+            <div class="hero-unit">
+                <h2>Example 1: Select donation on RSM mandate form</h2>
+                <p>When the supporter clicks "Donate now", the RSM mandate displays a drop-down list of donation options</p> 
+                <form name="form1" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="253.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="Donate now" name="submitjoin" type="submit" class="btn btn-large btn-info">
+                </form>
+            </div>
+
+            <div id="ex2" class="hero-unit">
+                <h2>Example 2: Donation level selected on GCT site</h2>
+                <p>The supporter selects a donation on the GCT site. The RSM mandate displays only the selected amount.</p> 
+                <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="2.00" name="purchasefix" type="hidden">
+                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="&pound;2 a month" name="submitjoin" type="submit" class="btn btn-primary btn-large">
+                </form>
+                <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="5.00" name="purchasefix" type="hidden">
+                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="&pound;5 a month" name="submitjoin" type="submit" class="btn btn-primary btn-large">
+                </form>
+                <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="10.00" name="purchasefix" type="hidden">
+                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="&pound;10 a month" name="submitjoin" type="submit" class="btn btn-primary btn-large">
+                </form>
+                <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="15.00" name="purchasefix" type="hidden">
+                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="&pound;15 a month" name="submitjoin" type="submit" class="btn btn-primary btn-large">
+                </form>
+                <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="20.00" name="purchasefix" type="hidden">
+                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="&pound;20 a month" name="submitjoin" type="submit" class="btn btn-primary btn-large">
+                </form>
+                <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="50.00" name="purchasefix" type="hidden">
+                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="&pound;50.00 a month" name="submitjoin" type="submit" class="btn btn-primary btn-large">
+                </form>
+                <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                    <input value="100.00" name="purchasefix" type="hidden">
+                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="1" name="repeat" type="hidden">
+                    <input value="&pound;100 a month" name="submitjoin" type="submit" class="btn btn-primary btn-large">
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </body>
+</html>
