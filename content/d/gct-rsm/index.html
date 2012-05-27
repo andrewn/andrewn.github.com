@@ -16,13 +16,21 @@
                 <h1>RSM demo forms</h1>
                 <div class="row">
                     <div class="span5">
-                        <h2>Membership form</h2>
+                        <h2>Membership form monthly</h2>
                         <form name="form1" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
                             <input value="250.187" name="campaign" type="hidden">
                             <input value="1" name="repeat" type="hidden">
-                            <input value="Join now" name="submitjoin" type="submit" class="btn btn-large btn-info">
+                            <input value="Join now, pay monthly" name="submitjoin" type="submit" class="btn btn-large btn-info">
                         </form> 
-                    </div>               
+                    </div>  
+                    <div class="span5">
+                        <h2>Membership form annually</h2>
+                        <form name="form1" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
+                            <input value="255.187" name="campaign" type="hidden">
+                            <input value="12" name="repeat" type="hidden">
+                            <input value="Join now, pay annually" name="submitjoin" type="submit" class="btn btn-large btn-info">
+                        </form> 
+                    </div>              
                     <div class="span5">
                         <h2>Donation form</h2>
                         <form name="form1" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
@@ -62,7 +70,7 @@
                 </form>
                 <form class="" name="form2" method="post" action="https://rsm3.rsmsecure.com/demo/directdebit/dd.php">
                     <input value="5.00" name="purchasefix" type="hidden">
-                    <input value="250.187" name="campaign" type="hidden">
+                    <input value="253.187" name="campaign" type="hidden">
                     <input value="1" name="repeat" type="hidden">
                     <input value="&pound;5 a month" name="submitjoin" type="submit" class="btn btn-success btn-large">
                 </form>
