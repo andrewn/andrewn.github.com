@@ -1,0 +1,73 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #eee;
+  background: #222;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(0, 255, 0, 0.4);
+}
+
+.reveal .slides section {
+  letter-spacing: -1;
+  /*text-align: left;*/
+  font-size: 60px;
+  /*font-weight: bold;*/
+}
+
+.reveal .slides section.left {
+  text-align: left;
+}
+
+.reveal .slides section.bg {
+  padding: 0.5em;
+  background-color: rgba(34,34,34,0.6);
+}
+
+/*
+  Title slide
+*/
+.reveal .slides section h3 {
+  font-size: 0.9em;
+} 
+
+.reveal .slides section .details, 
+.reveal .slides section .workshop {
+  font-size: 0.5em;
+}
+
+.reveal .slides section .details {
+  padding-top: 2em;
+  font-size: 0.9em;
+}
+
+.reveal .slides section .details .dept {
+  font-size: 0.7em;
+}
+
+.reveal .slides section .workshop {
+  padding-top: 1em;
+}
+
+/*
+  Dan and Phil
+*/
+#danandphil .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  margin-left: -30%;
+  margin-top: -30%;
+}
+
+/*
+  Links
+*/
+.reveal #links a {
+  color: #eee;
+  font-size: 0.8em;
+}
+

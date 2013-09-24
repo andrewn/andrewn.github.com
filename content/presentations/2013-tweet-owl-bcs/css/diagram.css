@@ -1,0 +1,47 @@
+/*
+  Owls
+*/
+#Receipt {
+  opacity: 1;
+  -webkit-transition: 2s all linear;
+}
+
+#Beam,
+#Beam-1,
+#ArrowBack {
+  opacity: 0;
+  -webkit-transition: 2s all linear;
+}
+
+#ArrowForward {
+  -webkit-transition: 2s all linear;
+}
+
+#MasterOwl #Receipt {
+  -webkit-transform: translate(91px, 130px) scale(1, 0);
+}
+
+#HomeOwl #Receipt {
+  -webkit-transform: translate(50.355731px, 72.031662px) scale(1,0);
+}
+
+#show-master #MasterOwl #Receipt,
+#show-slaves #MasterOwl #Receipt,
+#show-beam #MasterOwl #Receipt {
+  -webkit-transform: translate(91px, 130px) scale(1,1);
+}
+
+#show-slaves #HomeOwl #Receipt,
+#show-beam #HomeOwl #Receipt {
+  -webkit-transform: translate(50.355731px, 72.031662px) scale(1,1);
+}
+
+#show-beam #Beam,
+#show-beam #Beam-1,
+#show-beam #ArrowBack {
+  opacity: 1;
+}
+
+#show-beam #ArrowForward {
+  opacity: 0;
+}
