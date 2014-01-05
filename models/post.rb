@@ -15,6 +15,10 @@ module AndrewNicolaou
                   end
                 end
 
+                def self.latest(num=1)
+                  self.find_all.slice(0,num)
+                end
+
                 def self.find_by_slug(slug)
                   file_store = AndrewNicolaou::Models::FileStore.new("content/posts")
                   post_list = file_store.list("order_by_latest" => true).find do |post|
