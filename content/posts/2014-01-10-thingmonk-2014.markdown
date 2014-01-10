@@ -1,0 +1,107 @@
+---
+
+published: true
+title: ThingMonk 2014
+
+---
+
+
+On 3rd December, I attended [ThingMonk](http://redmonk.com/thingmonk), an IoT conference bridging the corporate and maker IoT communities. I've tried to pull out the interesting platforms, talks and themes into this post.
+
+It was at [Shoreditch Village Hall](http://shoreditchworks.com/shoreditch-village-hall) a great venue, free for non-commercial events (I think), excellent coffee.
+
+[Full notes are here, with diagrams](http://www.flickr.com/photos/andrewnicolaou/sets/72157638331550273/)
+
+tl;dr
+node.js, MQTT and Node-RED were mentioned many times, as was Clojure, stream-based and reactive programming paradigms. There are lots of competing platforms for managing your IoTs but little interoperability. There was an excellent talk on UX for IoT talking about "interusability", the experience across devices with different capabilities.
+
+## Platforms, protocols, apps
+- IBM IoT platform, (in development)
+- [BERG Cloud](http://bergcloud.com)
+- [EVERYTHNG](https://evrythng.com)
+- [opensensors](http://opensensors.io) - platform for community sensor data uses MQTT, RabbitMQ, Storm, Clojure
+- [Web of Things](http://www.webofthings.org) - IoT news
+- MQTT-SN for sensor networks, IBM created (mqtt.org)
+
+"Standards are like toothbrushes - you know you need one but you don't want to use someone else's"
+
+## Reactive programming
+
+Several talks argued that monolithic codebases make systems unreliable and unsuitable for managing fleets of devices. Several paradigms were suggested as solutions:
+
+- [Reactive Programming](http://www.reactivemanifesto.org/)
+- communicating sequential processes (CSP)
+- Complex Event Processing (CEP)
+- stream-based programming (SBP?)
+- Clojure's core.async was also mentioned a lot
+
+## Node-RED
+
+["A visual tool for wiring the IoT"](http://nodered.org). Impressive demo creating a twitter hashtag searcher that was displayed on a small LED display. All done with drag-and-drop components, like Yahoo! Pipes. Writing and sharing modules seems straightforward.
+
+## UX for IoT
+
+[Patrick Bergel](http://twitter.com/goodmachine) asked about the visibility of IoT products in puntastic talk "Thingdom come":
+
+- "Is my kettle mining bitcoin?"
+- "Is my TV spying on me?"
+
+Products should aspire the "condition of cutlery" with a dumb core that works like a non-IoT product and a smart shell that augments it with networked capabilities.
+
+Claire Rowland (@clurr) gave a *great* talk about designing products that are useful, usable and pleasurable to use. She designs connected products like the [British Gase Hive](https://www.hivehome.com/). 
+
+You need good UX to attract the "late majority" consumers. This requires:
+
+- clear proposition
+- clear conceptual model: this isn't the system model
+- good interusability: the UX across different devices with different capabilities
+
+A small interusability example: the Nest thermostat physical device has an electronic clicking noise when you turn the dial. The Nest native app using the same clicking sound when you press buttons.
+
+Paper: [http://lister.cms.livjm.ac.uk/homepage/staff/cmsdengl/cloud2011papers/helen-levoi.pdf]()
+
+Products vs tools:
+
+- Consumers must first configure tools to get value e.g. [Belkin Wemo smart plug](http://www.belkin.com/uk/Products/home-automation/c/wemo-home-automation/)
+- Products deliver value straight away e.g. [Nest Protect](https://nest.com/smoke-co-alarm/life-with-nest-protect/)
+
+Now that we've broken direct manipulation—where pressing a button, causes an action instantly—we must tell users where things are happening e.g. on the hub, on the internet, in the device etc.
+
+## Prototyping
+
+Matt Webb (BERG) spoke about making Little Printer (they've sold 3,000) including pictures of prototypes:
+
+- a netbook perched on its side connected to an arduino pretending to be a thermal printer;
+- foam models trying out case shapes, colours;
+- the first prototype they could take home based on a linux plug computer and an off-the-shelf thermal printer. This didn't look anything like the final product but let them live with it to see what it was like.
+
+Sounds like the UX, technical and experience prototypes from from ["What do prototypes prototype?"](http://hci.stanford.edu/courses/cs247/2012/readings/WhatDoPrototypesPrototype.pdf).
+
+He also noted "they call it hardware because it's hard" so do as much as possible on the web.
+
+## Atomic startups - the boring bits
+Tom Taylor, [Newspaper Club](http://www.newspaperclub.com/)
+
+Echoed Matt Webb's advice: Use digital to your advantage when building physical products because "the physical world is hard and different". 
+
+Things to think about:
+- what's the worst unboxing experience for your product?
+- surface the underlying realities of the physical systems to help your customers understand difficulties i.e. it's a printing press, it can break and people need to fly in from Germany to fix it;
+- do logistics to understand it, then outsource to scale/buy time/do it better (repeat for other things you don't know about)
+
+"A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch newer works and cannot be made to work"
+—John Gall, Systematics
+
+## Developer experience
+
+[https://twitter.com/mortenheroku]() spoke about the developer experience for IoT. 
+
+Outlined emerging architectures for IoT apps including:
+- getting code on the device (local discovery, auth with cloud, data exchange)
+- device management in the cloud
+- web/native apps providing interfaces 
+
+For developers, need "git push" to devices (like Heroku did for the web).
+
+
+
