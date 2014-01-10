@@ -20,6 +20,7 @@ body {
 */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
+  margin-bottom: 0.3em;
 }
 
 h1, h2 {
@@ -64,6 +65,12 @@ p {
   line-height: 1.667em;
 }
 
+p,
+ul,
+ol {
+  margin-bottom: 1em;
+}
+
 ul li {
   list-style-type: disc;
   list-style-position: inside;
@@ -73,6 +80,13 @@ ol li {
   line-height: 1.667em;
 }
 
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
 .hide {
   position: absolute;
   left: -9999px;
