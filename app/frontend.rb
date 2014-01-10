@@ -53,6 +53,7 @@ module AndrewNicolaou
     
     set :cache_max_age, 31557600
     set :cache_max_age_override, nil
+    set :homepage_posts_to_display, 3
     
     ## This before filter ensures that your pages are only ever served 
     ## once (per deploy) by Sinatra, and then by Varnish after that
@@ -120,7 +121,7 @@ module AndrewNicolaou
     get '/' do
       #settings.cache_max_age_override = 600
       @projects_list = AndrewNicolaou::Models::Project.find_all
-      @posts_list    = AndrewNicolaou::Models::Post.latest(1)
+      @posts_list    = AndrewNicolaou::Models::Post.latest(settings.homepage_posts_to_display)
       mustache :index
     end
 

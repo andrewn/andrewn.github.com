@@ -4,11 +4,11 @@
     <li>
         <a class="url" href="{{ url }}">
             <div class="meta">
-                <h2>{{ title }}</h2>
                 <time datetime="{{ machine_short_date }}">{{ short_date }}</time> 
+                <h3>{{ title }}</h3>
             </div>
+            <p>{{{summary}}}</p>
         </a>
-        <p>{{{summary}}}</p>
     </li>
     {{/posts}}
 </ul>
